@@ -1,0 +1,59 @@
+{
+  "schema": "cad-authorized-testset/item@2",
+  "id": "3859bcfade9b212f92a154b1b1c0d9991509df74e7b803033f962a578dc6ef98",
+  "test_index": 23,
+  "split": "test",
+  "license": "CC-BY-4.0",
+  "source_verified": true,
+  "native_sha256_equals_item_id": true,
+  "provenance": {
+    "original_filename": "LUPA-A1150-P006.SLDPRT",
+    "fixed_source_url": "https://zenodo.org/api/records/8156350/files/LUPA%20SOLIDWORKS.zip/content!/LUPA SOLIDWORKS/LUPA-A1150-P006.SLDPRT",
+    "commit": null,
+    "doi": "10.5281/zenodo.8156350",
+    "creators": [
+      {
+        "name": "Beringer, Courtney",
+        "affiliation": "Oregon State Univeristy",
+        "orcid": "0009-0001-4158-2663"
+      },
+      {
+        "name": "Bosma, Bret",
+        "affiliation": "Oregon State University",
+        "orcid": "0000-0002-5581-6467"
+      },
+      {
+        "name": "Robertson, Bryson",
+        "affiliation": "Oregon State University",
+        "orcid": "0000-0002-7844-8708"
+      }
+    ],
+    "license_evidence": "licenses/zenodo__8156350/evidence.json",
+    "scope_basis": "Versioned Zenodo CAD/hardware design record explicitly declares this license; archive/file bytes were checked against record checksums and native file SHA-256 matches the dataset item ID."
+  },
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 878310.3838298575,
+    "area_mm2": 85000.1087222794,
+    "bbox_mm": [
+      35.560000200000005,
+      194.93627139729554,
+      305.4557304975396
+    ],
+    "surface_types": {
+      "GeomAbs_Cylinder": 4,
+      "GeomAbs_Plane": 7
+    },
+    "geometry_signature": "48bcd8ffb65192fa2d8c7981a553e2610d9117e45bf52abf18e0e86b72c4a063",
+    "coarse_signature": "ebf7af31ffffd18eba20a0ede44f32531d7d6081847ddc4114bd2c21a2293d3c",
+    "solids": 1,
+    "faces": 11,
+    "edges": 54,
+    "shells": 1
+  },
+  "complexity": "simple",
+  "mesh_brep_volume_relative_difference": 0.00010128225861330142,
+  "input_file": "items/3859bcfade9b212f92a154b1b1c0d9991509df74e7b803033f962a578dc6ef98/brep.step",
+  "native_file_for_source_compliance_and_offline_review": "source_designs/3859bcfade9b212f92a154b1b1c0d9991509df74e7b803033f962a578dc6ef98/original.sldprt"
+}

@@ -1,0 +1,32 @@
+{
+  "format": "ip2-dataset/1",
+  "name": "Hardest23",
+  "count": 23,
+  "case_ids": [
+    "case010",
+    "case012",
+    "case023",
+    "case028",
+    "case047",
+    "case048",
+    "case053",
+    "case067",
+    "case096",
+    "case098",
+    "case099",
+    "case113",
+    "case125",
+    "case126",
+    "case143",
+    "case150",
+    "case161",
+    "case165",
+    "case170",
+    "case173",
+    "case188",
+    "case191",
+    "case195"
+  ],
+  "selection": "User-supplied difficult subset of 200; not a random sample.",
+  "licenses": "Per-case provenance/LICENSE.txt and ATTRIBUTION.txt."
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "cad-authorized-testset/item@2",
+  "id": "56e3721dc6c2dcfc9832d8fcb55a53352c44992dadd8bc4a965f6d1009aacc2c",
+  "test_index": 195,
+  "split": "test",
+  "license": "Apache-2.0",
+  "source_verified": true,
+  "native_sha256_equals_item_id": true,
+  "provenance": {
+    "original_filename": "VTCR-22-0017.SLDPRT",
+    "fixed_source_url": "https://raw.githubusercontent.com/viam-labs/chargla/86d1211dc688ae93f97459811478da3433cb5e9a/CAD%20SLDPRT%20files/VTCR-22-0017.SLDPRT",
+    "commit": "86d1211dc688ae93f97459811478da3433cb5e9a",
+    "doi": null,
+    "creators": [
+      {
+        "name": "viam-labs/chargla contributors"
+      }
+    ],
+    "license_evidence": "licenses/viam-labs__chargla/evidence.json",
+    "scope_basis": "Viam/Simone Giertz original Chargla design repository supplies its CAD SLDPRT files with Apache-2.0 LICENSE. README explicitly identifies the CAD distribution and excludes third-party GrabCAD Mecanum wheel/motor assemblies. Only supplied VTCR-numbered custom design files selected and byte-matched."
+  },
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 92361.17540080234,
+    "area_mm2": 86314.95721398757,
+    "bbox_mm": [
+      20.0,
+      20.0,
+      500.00000020000004
+    ],
+    "surface_types": {
+      "GeomAbs_Cylinder": 37,
+      "GeomAbs_Plane": 38
+    },
+    "geometry_signature": "feeae370c6294f404de07e2b81c462783bb085c47f4e4b706d6c7669813b21c7",
+    "coarse_signature": "20f94b2a9312855f754169241e79a534051b7b960a4bc5183f7da4e2b80245f3",
+    "solids": 1,
+    "faces": 75,
+    "edges": 438,
+    "shells": 1
+  },
+  "complexity": "complex",
+  "mesh_brep_volume_relative_difference": 0.007976446330497966,
+  "input_file": "items/56e3721dc6c2dcfc9832d8fcb55a53352c44992dadd8bc4a965f6d1009aacc2c/brep.step",
+  "native_file_for_source_compliance_and_offline_review": "source_designs/56e3721dc6c2dcfc9832d8fcb55a53352c44992dadd8bc4a965f6d1009aacc2c/original.sldprt"
+}

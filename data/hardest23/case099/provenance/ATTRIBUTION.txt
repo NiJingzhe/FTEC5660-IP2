@@ -1,0 +1,15 @@
+Sample: d8a510c0e31b974509d7ac9d16f6fce8d7de2d2f153837cd0fe463d4da3903d0
+Original title/project: alanzjl/AlkaidMount
+Original creators/project contributors: alanzjl/AlkaidMount contributors
+Project/versioned record: https://github.com/alanzjl/AlkaidMount
+Original file: tangent_az.SLDPRT
+Fixed source URL: https://raw.githubusercontent.com/alanzjl/AlkaidMount/4385d2e870a6c04702c017f0e358b0c6934889fd/CAD/Tangent/tangent_az.SLDPRT
+Source version/hash: 4385d2e870a6c04702c017f0e358b0c6934889fd
+License: GPL-3.0-only
+License URL: https://www.gnu.org/licenses/gpl-3.0.html
+Full license and original notices: licenses/alanzjl__AlkaidMount
+Evidence: licenses/alanzjl__AlkaidMount/evidence.json
+Editable native source: source_designs/d8a510c0e31b974509d7ac9d16f6fce8d7de2d2f153837cd0fe463d4da3903d0/original.sldprt
+Original SLDPRT SHA-256: d8a510c0e31b974509d7ac9d16f6fce8d7de2d2f153837cd0fe463d4da3903d0
+Changes: The native source is copied unchanged. STEP/GLB artifacts are copied from the supplied dataset; previews are rendered from GLB in this verification pass. These are not claimed to be upstream exports. Curated metadata and test indices were created on 2026-10-22. Converted model artifacts retain the upstream license. No upstream endorsement is claimed.
+Scope evidence: Author README identifies own build and ALL design files including CAD; root LICENSE applies GPL-3.0 to the design project. CAD/parts vendor directory excluded.

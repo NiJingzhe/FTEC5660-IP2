@@ -1,0 +1,15 @@
+Sample: d00c6227e54907d4e92ec59e041dcdac4084c873ed095e2cdaf45844e9432935
+Original title/project: MengyangGao/hand_exoskeleton
+Original creators/project contributors: MengyangGao/hand_exoskeleton contributors
+Project/versioned record: https://github.com/MengyangGao/hand_exoskeleton
+Original file: HJK.SLDPRT
+Fixed source URL: https://raw.githubusercontent.com/MengyangGao/hand_exoskeleton/a5d6a1de1cad0b27d47d62ecb8d4f4c7c4600ad7/mechanics/CAD_SolidWorks/HJK.SLDPRT
+Source version/hash: a5d6a1de1cad0b27d47d62ecb8d4f4c7c4600ad7
+License: MIT
+License URL: https://spdx.org/licenses/MIT.html
+Full license and original notices: licenses/MengyangGao__hand_exoskeleton
+Evidence: licenses/MengyangGao__hand_exoskeleton/evidence.json
+Editable native source: source_designs/d00c6227e54907d4e92ec59e041dcdac4084c873ed095e2cdaf45844e9432935/original.sldprt
+Original SLDPRT SHA-256: d00c6227e54907d4e92ec59e041dcdac4084c873ed095e2cdaf45844e9432935
+Changes: The native source is copied unchanged. STEP/GLB artifacts are copied from the supplied dataset; previews are rendered from GLB in this verification pass. These are not claimed to be upstream exports. Curated metadata and test indices were created on 2026-10-22. Converted model artifacts retain the upstream license. No upstream endorsement is claimed.
+Scope evidence: Authors publish their hand-exoskeleton design with the accompanying research paper and detailed original mechanism description; MIT LICENSE copyright Kevin Stark is fixed at the same commit. Selected named linkages and author-designed arm/wrist are described by that mechanism, with off-the-shelf components excluded.

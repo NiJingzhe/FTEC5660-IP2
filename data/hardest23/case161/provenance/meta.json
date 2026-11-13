@@ -1,0 +1,49 @@
+{
+  "schema": "cad-authorized-testset/item@2",
+  "id": "93a256ea83f1c3605805e85a76c1b730898755319c6bd4133a7369fa5de92a29",
+  "test_index": 161,
+  "split": "test",
+  "license": "CC-BY-4.0",
+  "source_verified": true,
+  "native_sha256_equals_item_id": true,
+  "provenance": {
+    "original_filename": "TRL-0042-A.SLDPRT",
+    "fixed_source_url": "https://zenodo.org/api/records/6354859/files/2021-06-29%20Trillium%20Drawings.zip/content!/2021-06-29 Trillium Drawings/TRL-0042-A.SLDPRT",
+    "commit": null,
+    "doi": "10.5281/zenodo.6354859",
+    "creators": [
+      {
+        "name": "Silber, Joseph Harry",
+        "affiliation": "Lawrence Berkeley National Lab"
+      }
+    ],
+    "license_evidence": "licenses/zenodo__6354859/evidence.json",
+    "scope_basis": "Versioned Zenodo CAD/hardware design record explicitly declares this license; archive/file bytes were checked against record checksums and native file SHA-256 matches the dataset item ID."
+  },
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 12.296644242867242,
+    "area_mm2": 44.994744278507675,
+    "bbox_mm": [
+      2.8000002000000004,
+      2.8000002000000004,
+      4.400000200000001
+    ],
+    "surface_types": {
+      "GeomAbs_Plane": 12,
+      "GeomAbs_Cylinder": 6,
+      "GeomAbs_Cone": 6
+    },
+    "geometry_signature": "a7b961a67c13b11be1c768ce8c098d6030323c1e190f1545c4bb39b2e33e0e70",
+    "coarse_signature": "209241da594522c84631a07a196806afecceb7ab9ed20df00e8a42dbdc6e09eb",
+    "solids": 1,
+    "faces": 24,
+    "edges": 136,
+    "shells": 1
+  },
+  "complexity": "medium",
+  "mesh_brep_volume_relative_difference": 0.004562139963665891,
+  "input_file": "items/93a256ea83f1c3605805e85a76c1b730898755319c6bd4133a7369fa5de92a29/brep.step",
+  "native_file_for_source_compliance_and_offline_review": "source_designs/93a256ea83f1c3605805e85a76c1b730898755319c6bd4133a7369fa5de92a29/original.sldprt"
+}

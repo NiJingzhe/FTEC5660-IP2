@@ -1,0 +1,15 @@
+Sample: 9421dc257bba02dc34f5c20ec0dc84357eaa31af668007c6b3a098faeb629d39
+Original title/project: Lucien112358/PNAS-Flexagon-Mechanisms
+Original creators/project contributors: Lucien112358/PNAS-Flexagon-Mechanisms contributors
+Project/versioned record: https://github.com/Lucien112358/PNAS-Flexagon-Mechanisms
+Original file: 120degNEW.SLDPRT
+Fixed source URL: https://raw.githubusercontent.com/Lucien112358/PNAS-Flexagon-Mechanisms/b9b1f7b5e367b0a17f0e1c0c417b60fbf038fb64/Simulation/k%3D3/p%3D6/120degNEW.SLDPRT
+Source version/hash: b9b1f7b5e367b0a17f0e1c0c417b60fbf038fb64
+License: MIT
+License URL: https://spdx.org/licenses/MIT.html
+Full license and original notices: licenses/Lucien112358__PNAS-Flexagon-Mechanisms
+Evidence: licenses/Lucien112358__PNAS-Flexagon-Mechanisms/evidence.json
+Editable native source: source_designs/9421dc257bba02dc34f5c20ec0dc84357eaa31af668007c6b3a098faeb629d39/original.sldprt
+Original SLDPRT SHA-256: 9421dc257bba02dc34f5c20ec0dc84357eaa31af668007c6b3a098faeb629d39
+Changes: The native source is copied unchanged. STEP/GLB artifacts are copied from the supplied dataset; previews are rendered from GLB in this verification pass. These are not claimed to be upstream exports. Curated metadata and test indices were created on 2026-10-22. Converted model artifacts retain the upstream license. No upstream endorsement is claimed.
+Scope evidence: README explicitly describes supplied research 3D models and simulations, licenses this project under MIT, and specifically asks users of code or models to cite its authors/paper. Native SLDPRTs verified at the same pinned commit.

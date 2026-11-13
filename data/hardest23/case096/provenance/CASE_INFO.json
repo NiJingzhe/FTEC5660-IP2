@@ -1,0 +1,34 @@
+{
+  "rank": 12,
+  "test_index": 96,
+  "case_id": "ce674be297a4ab99612337b8452496c191129591f65f57d58fd649151e26fdf4",
+  "original_filename": "108degNEW.SLDPRT",
+  "source_url": "https://github.com/Lucien112358/PNAS-Flexagon-Mechanisms/blob/HEAD/Simulation/k=3/p=5/108degNEW.SLDPRT",
+  "license": "MIT",
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 1810.780550507668,
+    "area_mm2": 1470.2212843869984,
+    "bbox_mm": [
+      10.000000000000009,
+      30.49509756796393,
+      45.48070754084938
+    ],
+    "surface_types": {
+      "GeomAbs_Cylinder": 6,
+      "GeomAbs_Plane": 7
+    },
+    "geometry_signature": "ca2f153a328654a4e749d91c8f6464803c7ce59e11c21851ecbbafedb729483d",
+    "coarse_signature": "651588812de2fe7ae4c57857199bb0d78f78a182e9daa15fed5e424bc5548422",
+    "solids": 1,
+    "faces": 13,
+    "edges": 60,
+    "shells": 1
+  },
+  "step_sha256": "f3ec06f872e3053c5dfcd2f1a7b12c4167b1f351e2376e17f8f6bfbb1239341c",
+  "original_dataset_step_path": "items/ce674be297a4ab99612337b8452496c191129591f65f57d58fd649151e26fdf4/brep.step",
+  "packaged_step_path": "cases/12_case096_ce674be2/brep.step",
+  "native_source_path": "source_designs/ce674be297a4ab99612337b8452496c191129591f65f57d58fd649151e26fdf4/original.sldprt",
+  "license_evidence": "licenses/Lucien112358__PNAS-Flexagon-Mechanisms/evidence.json"
+}

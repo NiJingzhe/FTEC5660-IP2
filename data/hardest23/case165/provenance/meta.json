@@ -1,0 +1,48 @@
+{
+  "schema": "cad-authorized-testset/item@2",
+  "id": "96715c9ecddf5d0c608397f9e49e282d5b758b14d09a0933a155306ff3894b06",
+  "test_index": 165,
+  "split": "test",
+  "license": "GPL-3.0-only",
+  "source_verified": true,
+  "native_sha256_equals_item_id": true,
+  "provenance": {
+    "original_filename": "P29_Wheel_Bracket_Fixing_Plate.SLDPRT",
+    "fixed_source_url": "https://raw.githubusercontent.com/esa-prl/ExoMy/179a99925ea48a222fb72a207de20b3bbc3db64c/Mechanical%20Design/P29_Wheel_Bracket_Fixing_Plate.SLDPRT",
+    "commit": "179a99925ea48a222fb72a207de20b3bbc3db64c",
+    "doi": null,
+    "creators": [
+      {
+        "name": "esa-prl/ExoMy contributors"
+      }
+    ],
+    "license_evidence": "licenses/esa-prl__ExoMy/evidence.json",
+    "scope_basis": "ESA project distributes SLDPRT/STEP mechanical designs under repository GPL-3.0. Mechanical Design/README.md explicitly identifies Pxx files as project 3D-printed parts and separates Purchased Parts/Fasteners."
+  },
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 4856.669036907927,
+    "area_mm2": 3300.5926578431886,
+    "bbox_mm": [
+      4.500000200000363,
+      44.000000199999995,
+      46.500000100000726
+    ],
+    "surface_types": {
+      "GeomAbs_Plane": 14,
+      "GeomAbs_Cylinder": 8,
+      "GeomAbs_Cone": 4
+    },
+    "geometry_signature": "11fe12920ccafe5810eb4bab0670ee59fce0cfce930534ebbf730d5a624dfd8f",
+    "coarse_signature": "f8b78d6f00cb6c21270342d36f67b97c4552109078778db9368d3d4c34a05752",
+    "solids": 1,
+    "faces": 26,
+    "edges": 136,
+    "shells": 1
+  },
+  "complexity": "medium",
+  "mesh_brep_volume_relative_difference": 0.00023618906059783105,
+  "input_file": "items/96715c9ecddf5d0c608397f9e49e282d5b758b14d09a0933a155306ff3894b06/brep.step",
+  "native_file_for_source_compliance_and_offline_review": "source_designs/96715c9ecddf5d0c608397f9e49e282d5b758b14d09a0933a155306ff3894b06/original.sldprt"
+}

@@ -1,0 +1,34 @@
+{
+  "rank": 22,
+  "test_index": 150,
+  "case_id": "6cc51f4fde5a1327d7c3871d113dfa7e2b07f83f85140d5dad549fcb8683dd76",
+  "original_filename": "arm_wrist-0426.SLDPRT",
+  "source_url": "https://github.com/MengyangGao/hand_exoskeleton/blob/HEAD/mechanics/CAD_SolidWorks/arm_wrist-0426.SLDPRT",
+  "license": "MIT",
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 21128.49936778222,
+    "area_mm2": 8063.364218825434,
+    "bbox_mm": [
+      24.00000010000001,
+      48.00000000000001,
+      48.00000000000001
+    ],
+    "surface_types": {
+      "GeomAbs_Cylinder": 20,
+      "GeomAbs_Plane": 23
+    },
+    "geometry_signature": "bd97d9be331bc9c78e3253e241ae226b64bcc17e4cddba7e62953d919e692dca",
+    "coarse_signature": "99bd4035885a382024a1d8d563fc7922446f4685fdfb624714c6678e8bbfd6b1",
+    "solids": 1,
+    "faces": 43,
+    "edges": 230,
+    "shells": 1
+  },
+  "step_sha256": "2f723406916b30eb695e5315c1d473acedac36e77b6f1ea72bdafa802cacc4a6",
+  "original_dataset_step_path": "items/6cc51f4fde5a1327d7c3871d113dfa7e2b07f83f85140d5dad549fcb8683dd76/brep.step",
+  "packaged_step_path": "cases/22_case150_6cc51f4f/brep.step",
+  "native_source_path": "source_designs/6cc51f4fde5a1327d7c3871d113dfa7e2b07f83f85140d5dad549fcb8683dd76/original.sldprt",
+  "license_evidence": "licenses/MengyangGao__hand_exoskeleton/evidence.json"
+}

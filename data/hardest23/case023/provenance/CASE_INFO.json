@@ -1,0 +1,34 @@
+{
+  "rank": 23,
+  "test_index": 23,
+  "case_id": "3859bcfade9b212f92a154b1b1c0d9991509df74e7b803033f962a578dc6ef98",
+  "original_filename": "LUPA-A1150-P006.SLDPRT",
+  "source_url": "https://zenodo.org/records/8156350/files/LUPA SOLIDWORKS.zip!/LUPA SOLIDWORKS/LUPA-A1150-P006.SLDPRT",
+  "license": "CC-BY-4.0",
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 878310.3838298575,
+    "area_mm2": 85000.1087222794,
+    "bbox_mm": [
+      35.560000200000005,
+      194.93627139729554,
+      305.4557304975396
+    ],
+    "surface_types": {
+      "GeomAbs_Cylinder": 4,
+      "GeomAbs_Plane": 7
+    },
+    "geometry_signature": "48bcd8ffb65192fa2d8c7981a553e2610d9117e45bf52abf18e0e86b72c4a063",
+    "coarse_signature": "ebf7af31ffffd18eba20a0ede44f32531d7d6081847ddc4114bd2c21a2293d3c",
+    "solids": 1,
+    "faces": 11,
+    "edges": 54,
+    "shells": 1
+  },
+  "step_sha256": "12e7cf54ad3a25a82fb8ac1cad65719461ac65d0f259707e37aa108d1582db4b",
+  "original_dataset_step_path": "items/3859bcfade9b212f92a154b1b1c0d9991509df74e7b803033f962a578dc6ef98/brep.step",
+  "packaged_step_path": "cases/23_case023_3859bcfa/brep.step",
+  "native_source_path": "source_designs/3859bcfade9b212f92a154b1b1c0d9991509df74e7b803033f962a578dc6ef98/original.sldprt",
+  "license_evidence": "licenses/zenodo__8156350/evidence.json"
+}

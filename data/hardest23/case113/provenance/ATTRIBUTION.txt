@@ -1,0 +1,16 @@
+Sample: 052413fceb72abfcf0a2534e695894f295b2522fdf025ea1f535eb88779d8632
+Original title/project: Design Files for Hand-Operated and Motorized Twisted Pair Preparation Devices
+Original creators/project contributors: Merseal, Ty; Lett, Ethan; Youngblood, Tanner; Allison, Luke; Swendner, Rowan; Curl, Daniel; Pierson, Stephen; Jensen, David; Hu, Han
+Project/versioned record: https://zenodo.org/records/20344658
+Original file: 0007-RINSIDEPAN IR.SLDPRT
+Fixed source URL: https://zenodo.org/api/records/20344658/files/ned3-010_twisted_pair_preparation_device.zip/content!/ned3-010_twisted_pair_preparation_device/Motorized Unit/FINAL DRAWINGS AND PARTS/CAD/0007-RINSIDEPAN IR.SLDPRT
+Source version/hash: Zenodo record 20344658
+License: CC-BY-4.0
+License URL: https://creativecommons.org/licenses/by/4.0/
+Full license and original notices: licenses/zenodo__20344658
+Evidence: licenses/zenodo__20344658/evidence.json
+Editable native source: source_designs/052413fceb72abfcf0a2534e695894f295b2522fdf025ea1f535eb88779d8632/original.sldprt
+Original SLDPRT SHA-256: 052413fceb72abfcf0a2534e695894f295b2522fdf025ea1f535eb88779d8632
+Changes: The native source is copied unchanged. STEP/GLB artifacts are copied from the supplied dataset; previews are rendered from GLB in this verification pass. These are not claimed to be upstream exports. Curated metadata and test indices were created on 2026-10-22. Converted model artifacts retain the upstream license. No upstream endorsement is claimed.
+Scope evidence: Versioned Zenodo CAD/hardware design record explicitly declares this license; archive/file bytes were checked against record checksums and native file SHA-256 matches the dataset item ID.
+DOI: https://doi.org/10.5281/zenodo.20344658

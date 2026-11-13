@@ -1,0 +1,15 @@
+Sample: b07ff02019a73389a5221b267033b529163a65e7f149c9f613090821f1ff2f9f
+Original title/project: SolidWorks files
+Original creators/project contributors: Luiz Fernando Pinto de Oliveira
+Project/versioned record: https://osf.io/gu4zx/
+Original file: screw_2.SLDPRT
+Fixed source URL: https://osf.io/download/3ge26/
+Source version/hash: b07ff02019a73389a5221b267033b529163a65e7f149c9f613090821f1ff2f9f
+License: CC-BY-4.0
+License URL: https://creativecommons.org/licenses/by/4.0/
+Full license and original notices: licenses/osf__gu4zx
+Evidence: licenses/osf__gu4zx/evidence.json
+Editable native source: source_designs/b07ff02019a73389a5221b267033b529163a65e7f149c9f613090821f1ff2f9f/original.sldprt
+Original SLDPRT SHA-256: b07ff02019a73389a5221b267033b529163a65e7f149c9f613090821f1ff2f9f
+Changes: The native source is copied unchanged. STEP/GLB artifacts are copied from the supplied dataset; previews are rendered from GLB in this verification pass. These are not claimed to be upstream exports. Curated metadata and test indices were created on 2026-10-22. Converted model artifacts retain the upstream license. No upstream endorsement is claimed.
+Scope evidence: OSF component explicitly titled SolidWorks files declares its own CC-BY-4.0 license relation; contributors and file version/hash records retained.

@@ -1,5 +1,5 @@
 {
-  "what": "Independent replication of the representation comparison (CADDesigner's claim C1) on a second benchmark, plus token-cost comparison against an industrial CAD driven through its MCP. These are real released runs; sources below.",
+  "what": "Historical first-party released benchmark summaries for the representation comparison (CADDesigner's claim C1), plus token-cost comparison against an industrial CAD driven through its MCP. Not outputs of this repository's Hardest23 harness; sources below.",
   "replication_vs_cadquery": {
     "task": "rebuild a part as parametric code from its STEP file",
     "parts": "200 real open-hardware parts from 27 projects, 2-1384 mm, median 19 faces",
@@ -22,29 +22,5 @@
       {"task": "S07", "ecip_tokens_m": 12.07, "industrial_mcp_tokens_m": 14.88, "delta": "1.2x fewer"}
     ],
     "source": "released benchmark figures, SimpleCADAPI repository img/benchmark/vs_industrial_mcp.svg (2026-11-13)"
-  },
-  "construction_graph_retrieval_ablation_cadir": {
-    "what": "the trained version of the same retrieval mechanism, quantified under the same 100-case-library protocol on the 200-model generation task (CADIR, arXiv:2608.00891, Table 3)",
-    "protocol": "100-case library, non-overlapping split; generation on 200 models (100 DeepCAD + 100 Fusion 360 Gallery), LLM GPT-5.4",
-    "text_queries": {
-      "none": {"iou": 0.2702, "cd_1e3": 18.36, "hd": 0.2272, "suc": 1.0},
-      "full_graph": {"iou": 0.2837, "cd_1e3": 17.03, "hd": 0.2086, "suc": 1.0},
-      "full_graph_plus_subgraph": {"iou": 0.3064, "cd_1e3": 13.47, "hd": 0.2007, "suc": 1.0}
-    },
-    "image_queries": {
-      "none": {"iou": 0.2613, "cd_1e3": 18.49, "hd": 0.2263},
-      "full_graph": {"iou": 0.3046, "cd_1e3": 16.45, "hd": 0.2011},
-      "full_graph_plus_subgraph": {"iou": 0.3852, "cd_1e3": 11.48, "hd": 0.1734}
-    },
-    "retrieval_quality_N1000": {
-      "text": {"construction_graph": {"r_at_5": 0.7495, "r_at_10": 0.8054}, "flat_chunks": {"r_at_5": 0.2733, "r_at_10": 0.4046}},
-      "image": {"construction_graph": {"r_at_5": 0.5409, "r_at_10": 0.6513}, "flat_chunks": {"r_at_5": 0.2778, "r_at_10": 0.4114}}
-    },
-    "text_to_cad_comparison": {
-      "CADIR": {"iou": 0.3064, "cd_1e3": 13.47, "hd": 0.2007, "suc": 1.0},
-      "CADDesigner_rerun": {"iou": 0.2347, "cd_1e3": 23.87, "hd": 0.2630, "suc": 0.995},
-      "CADCodeVerify": {"iou": 0.2334, "cd_1e3": 23.63, "hd": 0.2566, "suc": 0.87},
-      "Text2CAD": {"iou": 0.1578, "cd_1e3": 56.54, "hd": 0.3806, "suc": 0.95}
-    }
   }
 }

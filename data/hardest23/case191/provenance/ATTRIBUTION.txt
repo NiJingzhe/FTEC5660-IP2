@@ -1,0 +1,15 @@
+Sample: 0bc270f7ebeac6e1aaa93ac29cf123c107b28729c5f3498fd8ae428d4e1a87a1
+Original title/project: tschicki/PS2-Portable
+Original creators/project contributors: tschicki/PS2-Portable contributors
+Project/versioned record: https://github.com/tschicki/PS2-Portable
+Original file: Heatsink Tapping Tool.SLDPRT
+Fixed source URL: https://raw.githubusercontent.com/tschicki/PS2-Portable/0ef8c9d78a2db9cc5a5687d5720433bf627f4f60/Solidworks/Output/Output%20Assembly/Heatsink%20Tapping%20Tool.SLDPRT
+Source version/hash: 0ef8c9d78a2db9cc5a5687d5720433bf627f4f60
+License: MIT
+License URL: https://spdx.org/licenses/MIT.html
+Full license and original notices: licenses/tschicki__PS2-Portable
+Evidence: licenses/tschicki__PS2-Portable/evidence.json
+Editable native source: source_designs/0bc270f7ebeac6e1aaa93ac29cf123c107b28729c5f3498fd8ae428d4e1a87a1/original.sldprt
+Original SLDPRT SHA-256: 0bc270f7ebeac6e1aaa93ac29cf123c107b28729c5f3498fd8ae428d4e1a87a1
+Changes: The native source is copied unchanged. STEP/GLB artifacts are copied from the supplied dataset; previews are rendered from GLB in this verification pass. These are not claimed to be upstream exports. Curated metadata and test indices were created on 2026-10-22. Converted model artifacts retain the upstream license. No upstream endorsement is claimed.
+Scope evidence: README explicitly licenses all firmware, gateware and hardware under MIT; OTS and identified third-party component models excluded.

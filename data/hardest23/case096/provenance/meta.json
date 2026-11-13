@@ -1,0 +1,47 @@
+{
+  "schema": "cad-authorized-testset/item@2",
+  "id": "ce674be297a4ab99612337b8452496c191129591f65f57d58fd649151e26fdf4",
+  "test_index": 96,
+  "split": "test",
+  "license": "MIT",
+  "source_verified": true,
+  "native_sha256_equals_item_id": true,
+  "provenance": {
+    "original_filename": "108degNEW.SLDPRT",
+    "fixed_source_url": "https://raw.githubusercontent.com/Lucien112358/PNAS-Flexagon-Mechanisms/b9b1f7b5e367b0a17f0e1c0c417b60fbf038fb64/Simulation/k%3D3/p%3D5/108degNEW.SLDPRT",
+    "commit": "b9b1f7b5e367b0a17f0e1c0c417b60fbf038fb64",
+    "doi": null,
+    "creators": [
+      {
+        "name": "Lucien112358/PNAS-Flexagon-Mechanisms contributors"
+      }
+    ],
+    "license_evidence": "licenses/Lucien112358__PNAS-Flexagon-Mechanisms/evidence.json",
+    "scope_basis": "README explicitly describes supplied research 3D models and simulations, licenses this project under MIT, and specifically asks users of code or models to cite its authors/paper. Native SLDPRTs verified at the same pinned commit."
+  },
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 1810.780550507668,
+    "area_mm2": 1470.2212843869984,
+    "bbox_mm": [
+      10.000000000000009,
+      30.49509756796393,
+      45.48070754084938
+    ],
+    "surface_types": {
+      "GeomAbs_Cylinder": 6,
+      "GeomAbs_Plane": 7
+    },
+    "geometry_signature": "ca2f153a328654a4e749d91c8f6464803c7ce59e11c21851ecbbafedb729483d",
+    "coarse_signature": "651588812de2fe7ae4c57857199bb0d78f78a182e9daa15fed5e424bc5548422",
+    "solids": 1,
+    "faces": 13,
+    "edges": 60,
+    "shells": 1
+  },
+  "complexity": "simple",
+  "mesh_brep_volume_relative_difference": 0.0012241465189437644,
+  "input_file": "items/ce674be297a4ab99612337b8452496c191129591f65f57d58fd649151e26fdf4/brep.step",
+  "native_file_for_source_compliance_and_offline_review": "source_designs/ce674be297a4ab99612337b8452496c191129591f65f57d58fd649151e26fdf4/original.sldprt"
+}

@@ -1,0 +1,13 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv*/
+.env
+.cache/
+data/raw/
+work/
+results/runs/
+presentation/video/node_modules/
+presentation/video/out/
+presentation/video/public/
+presentation/vo/

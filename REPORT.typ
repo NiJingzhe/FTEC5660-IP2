@@ -18,9 +18,9 @@ Ni · November 2026
   benchmark
 - #strong[Code:] the reproduced system is our public SDK ---
   #link("https://github.com/PhySpace/SimpleCADAPI")[PhySpace/SimpleCADAPI]\;
-  this repository carries the report, the protocol, provenance-tracked
-  results (`results/`), and the future-work retrieval module with tests
-  (`code/graph_retrieval.py`)
+  this repository includes a runnable paired STEP-to-code harness
+  (`run.py`), the 23-case Hardest23 subset, versioned protocol,
+  independent scorer, and provenance-tracked historical results.
 
 #divider()
 
@@ -41,15 +41,17 @@ the finding.
 
 A note on provenance: #strong[CADDesigner is my own work] --- I am an
 author of the paper, and the SimpleCADAPI codebase is ours (paper-era
-ECIP and today's released native SDK alike); #emph[CADIR], cited later
-for future work, is our follow-up. This access is what makes the
-reproduction meaningful rather than circular: instead of re-typing the
-paper's tables, I verify its central claim and then upgrade the one
-component its own ablations show to be load-bearing. This is also the
-scope of reproduction this project takes --- the assignment does not
-require re-matching the original paper's tables: the system's idea is
-rebuilt under new conditions and measured against #strong[new baselines]
-under identical, paired conditions (Section 5).
+ECIP and today's released native SDK alike). Because the reproduced system is our
+own, this is not an outside replication, and I say so up front. Instead
+of re-typing the paper's tables, I (a) check that the published DeepCAD
+runs are consistent with the paper's central claim, and (b) upgrade the
+one component its own ablations show to be load-bearing and measure the
+upgrade against #strong[new baselines] under identical, paired
+conditions (Section 5). As discussed with the instructor, this report
+therefore does not re-run and re-match the original paper's tables; the
+assignment text asks for "your own measured outputs", and the paired
+benchmark in Section 5 is where those come from. Section 6 states which
+numbers were re-run and which are only cited.
 
 Three claims structure the report:
 
@@ -145,19 +147,28 @@ results are.
 
 == 4. Reproduction results
 <reproduction-results>
-#strong[C1 on the reference evaluation (DeepCAD).] The published table
-above is the reference result. The claims it supports: ECIP leads IoU
-(+7.6% over CadQuery), CD (−32%), HD (−20%), delivery success (100% vs
-87.5%), and tokens (−30%); build123d leads Pass\@1 (0.59) and latency
-but pays in geometric fidelity --- consistent with its fluent-chaining
-design obscuring semantics from the LLM.
+#strong[C1 on the reference evaluation (DeepCAD).] These are #strong[our
+own first-party runs] (my co-authors and I), produced for the paper and
+not repeated during this assignment; the table in Section 2 is the
+published result (the paper's Table 5), which I re-checked here against
+the paper text and for internal consistency. What it supports: ECIP
+leads IoU (+7.6% over CadQuery), CD (−32%), HD (−20%), delivery success
+(100% vs 87.5%), and tokens (−30%); build123d leads Pass\@1 (0.59) and
+latency but trails ECIP in geometric fidelity. The paper's explanation
+--- build123d's symbolic, fluent style hides semantics from the LLM ---
+is a hypothesis it does not test in isolation.
 
-#strong[Verdict.] The representation ordering --- fidelity and success
-to ECIP, first-attempt rate to build123d, fidelity deficit to CadQuery
---- is the claim the setup can test, and it is what the table shows. The
-margins are moderate on the mean; Section 5 shows that under a weaker
-LLM the difference concentrates in the #emph[tail], which a means-only
-reproduction would miss.
+#strong[Verdict.] Our own measured outputs show C1's ordering (fidelity
+and success to ECIP, first-attempt rate to build123d, a fidelity deficit
+for CadQuery). They are first-party results rather than an outside
+replication, which is the usual caveat for authors reproducing their own
+paper, and the margins on the mean are moderate. One small discrepancy
+turned up while cross-checking: the paper reports the same ECIP
+configuration with Pass\@1 = 0.45 in its ablation table (Table 2) and
+0.46 in the representation table (Table 5); I cite both as printed and
+do not resolve it. As an author, I can settle this from our run logs;
+the report keeps both values until that is done. The evidence for the
+change itself is the paired benchmark in Section 5.
 
 == 5. The one change: from paper-era ECIP to the agent-native SDK contract
 <the-one-change-from-paper-era-ecip-to-the-agent-native-sdk-contract>
@@ -177,23 +188,22 @@ replaces that contract wholesale:
   language over tags and semantic lineage --- not by indices that shift
   across edits.
 + #strong[Replayable session graph.] Every call is recorded as a
-  replayable graph: the substrate for caching, checking, and (as future
-  work) retrieval over past cases.
+  replayable graph for caching, checking, and durable model delivery.
 + #strong[Native kernel.] OpenCascade compiled into the wheel --- no
   CadQuery dependency --- with a functional, cacheable API.
 
 #strong[Conditional-generation evaluation.] The released benchmark
-measures exactly whether the new contract generates better, under
-controlled conditions: the #emph[condition] is a reference part --- 200
-real open-hardware parts from 27 projects (2--1,384 mm, median 19 faces)
-supplied as STEP --- the #emph[output] is parametric code, an
-independent frozen scorer compares the delivered geometry against the
-original, and both arms are driven by the #emph[same] LLM
-(DeepSeek-V4.1-Flash), one attempt each, no retries, with a paired test
-on the distortion rate: SimpleCADAPI 2.2.7b1 versus CadQuery 2.8.0.
-(Disclosure kept from the original protocol: the SimpleCADAPI arm used
-its STEP-reconstruction workflow guide; the CadQuery arm a general
-third-party CadQuery skill; the parts are mostly simple.)
+compares the two libraries under controlled conditions: the
+#emph[condition] is a reference part --- 200 real open-hardware parts
+from 27 projects (2--1,384 mm, median 19 faces) supplied as STEP --- the
+#emph[output] is parametric code, an independent frozen scorer compares
+the delivered geometry against the original, and both arms are driven by
+the #emph[same] LLM (DeepSeek-V4.1-Flash), one attempt each, no retries,
+with a paired test on the distortion rate: SimpleCADAPI 2.2.7b1 versus
+CadQuery 2.8.0. (Disclosure kept from the original protocol: the
+SimpleCADAPI arm used its STEP-reconstruction workflow guide; the
+CadQuery arm a general third-party CadQuery skill; the parts are mostly
+simple.)
 
 #strong[Measured effect.]
 
@@ -201,8 +211,8 @@ third-party CadQuery skill; the parts are mostly simple.)
   align(center)[#table(
     columns: (25%, 25%, 25%, 25%),
     align: (auto,auto,auto,auto,),
-    table.header([Metric (200 parts, one attempt, paired)], [New SDK
-      (2.2.7b1)], [CadQuery 2.8.0], [Delta],),
+    table.header([Metric (200 parts, one attempt per arm, single run,
+      paired)], [New SDK (2.2.7b1)], [CadQuery 2.8.0], [Delta],),
     table.hline(),
     [Delivered but badly wrong (surface F1 \@ 1 mm \<
     99.99%)], [#strong[4.4%]], [15.6%], [3.5× fewer, paired p = 0.002],
@@ -218,65 +228,97 @@ MCP] (same tasks, tokens per task): 3.56 M vs 14.17 M (S01, 4.0× fewer),
 ≥11.07 M vs 22.39 M (S05, ≤2.0×), 4.14 M vs 26.96 M (S06, 6.5×), 12.07 M
 vs 14.88 M (S07, 1.2×).
 
-#strong[Interpretation, stated carefully.] I do not claim a direct
-new-SDK-versus-old-ECIP delta: the paper's ECIP ran with Claude-4-Sonnet
-on DeepCAD, a different model and dataset, so no paired comparison
-exists. What the paired benchmark does establish: under a cheaper and
-weaker LLM than the paper's, the new contract #emph[keeps] ECIP's
-ordering over CadQuery and #emph[enlarges] the gap where agents actually
-fail --- the badly-wrong tail (3.5×) and absolute surface error (472×)
---- while cutting tokens against an MCP-driven industrial CAD by up to
-6.5×. Robustness under model degradation is the property a tool contract
-can actually buy.
+#strong[Interpretation, stated carefully.] Results are not directly
+comparable to the paper because the underlying LLM, task and dataset
+differ. I make no claim about a new-SDK-versus-old-ECIP delta: the
+paper's ECIP ran with Claude-4-Sonnet on DeepCAD, so no paired
+comparison exists. What the paired benchmark does show is narrower: with
+the same cheaper LLM on both arms, the new SDK delivered fewer
+badly-wrong models (3.5×), a much lower mean surface error (472×) and
+more valid models than CadQuery, and used up to 6.5× fewer tokens than
+an MCP-driven industrial CAD on four tasks.
 
-#strong[Future work, artifact included.] The same session graph that
-underlies the new contract enables retrieval over past cases:
-`code/graph_retrieval.py` implements the training-free version
-(serialize each accepted case's construction graph, mix graph and
-document similarity, index feature-level subgraphs by backward
-traversal), with unit tests verifying that a structurally matching case
-outranks a textually similar but structurally different one. Our
-follow-up #emph[CADIR] quantifies the trained version of this mechanism
-under the same 100-case-library protocol --- text IoU 0.2702 → 0.2837
-(full-graph) → 0.3064 (full + subgraph); image 0.2613 → 0.3852;
-retrieval R\@5 0.7495 vs 0.2733 for flat chunks at a 1000-model corpus
---- which is the measurement this module would head toward.
+Two limits on how far this can be read. First, #strong[the change is not
+isolated]: the SDK replaces four things at once (measured errors, stable
+selection, session graph, native kernel), and I ran no ablation among
+them, so the gain belongs to the SDK as a whole, not to any single item
+--- the link from the paper's ablation (C3) to the gain is an argument
+for where to look, not a measured attribution. Second, whether the gap
+would be larger or smaller under a stronger LLM is untested here.
 
-== 6. Difficulties and discrepancies
-<difficulties-and-discrepancies>
-- #strong[Two benchmarks, two tasks.] The DeepCAD evaluation is
-  text-conditioned generation; the 200-part benchmark is
-  geometry-conditioned generation. I use each for the claim it can test
-  and do not merge their numbers.
-- #strong[No paired old-vs-new measurement.] The honest form of "the new
-  SDK is better" is the paired comparison against CadQuery under
-  identical conditions, plus the argument from C3 (the contract is
-  load-bearing) --- not a fabricated ECIP-era delta. This is the main
-  wording discipline of the report.
-- #strong[Scorer freeze.] Both evaluations use scorers frozen before any
-  run (the released scorer is hash-pinned), because a metric computed by
-  the generating agent is not a metric.
-- #strong[Tail vs.~mean.] On simple parts (median 19 faces) the mean
-  fidelity of both representations is high and the difference
-  concentrates in the "badly wrong" tail; a reproduction that only
-  reported means would have missed the claim the data actually supports.
-- #strong[C2 not reproduced] --- three external checkpoints and a
-  1K-model subset are outside course scope; the DeepCAD-vs-baselines
-  table is cited, not re-verified.
+#strong[Runnable reproduction artifact.] The repository follows the
+case/episode/scorer organization of #strong[BenchCAD 2.0]
+(`BenchCAD-org/benchcad-2-main`), with a custom STEP-conditioned task.
+It includes the supplied #strong[Hardest23] subset, same-model paired
+execution for SimpleCADAPI 2.2.7b1 and CadQuery 2.8.0, explicit submission,
+Docker isolation, per-round records, and independent scoring using the
+original report's metrics: Material IoU (boolean fuzzy 1e-7 mm), surface
+F1 at 1 mm (10,000 area-weighted samples per direction), Chamfer L1 and
+sampled Hausdorff in mm. Severe distortion means F1 below 99.99%, among
+valid deliveries. The original frozen evaluator.py was not supplied;
+this implementation follows the reported definitions, with byte-level
+equivalence unverified. Hardest23 is a selected
+difficult subset, not a random estimate of all 200 parts. Offline checks
+validate all 23 manifests, both libraries' actual STEP exports, scorer
+identity, and final execution without access to the target. No LLM
+reconstruction run has yet been performed with this harness. Commands and
+the exact protocol are in `README.md` and `docs/PROTOCOL.md`.
 
-== 7. Conclusion
-<conclusion>
-The reproduction targets the strongest property of CADDesigner --- a
-same-loop, same-data representation comparison --- and confirms its
-ordering (C1) on the reference DeepCAD evaluation. The one change
-upgrades the component the paper's own ablations show to be
-load-bearing: the agent-facing tool contract, from paper-era ECIP to the
-released native SDK with measured structured errors, stable-reference
-selection and a replayable session graph. Evaluated as conditional
-generation on a paired 200-part benchmark under an identical, cheaper
-LLM, the new contract delivers 3.5× fewer badly-wrong models (p =
-0.002), 472× lower mean surface error, 8 more valid deliveries, and up
-to 6.5× fewer tokens than driving an industrial CAD through its MCP.
-Artifacts: this repository (protocol, provenance-tracked results, the
-future-work retrieval module with tests), the report, and the recorded
+== 6. Debug diary: blockers, discrepancies, and how each was handled
+<debug-diary-blockers-discrepancies-and-how-each-was-handled>
+- #strong[Making the artifact runnable.] The repository previously carried
+  result summaries without an execution pipeline. It now includes Hardest23,
+  a shared entry point, isolated final execution, independent scoring, and
+  logs. The pipeline is validated offline; LLM reconstruction results remain
+  to be collected.
+- #strong[No paired old-vs-new measurement.] The paper's ECIP ran with
+  Claude-4-Sonnet on DeepCAD; the paired benchmark uses
+  DeepSeek-V4.1-Flash on 200 open-hardware parts. Nothing in the two
+  datasets is shared, so I do not compute a new-versus-old delta. The
+  comparison I report is new SDK versus CadQuery under identical
+  conditions.
+- #strong[Two benchmarks, two tasks.] DeepCAD is text-conditioned
+  generation; the 200-part benchmark is reference-geometry-conditioned.
+  Each is used only for the claim it can test and their numbers are
+  never merged.
+- #strong[Paper-internal inconsistency.] ECIP Pass\@1 is 0.45 in the
+  paper's Table 2 and 0.46 in its Table 5 (Section 4); cited as printed.
+- #strong[Scorer freeze.] Both evaluations use scorers fixed before any
+  run (the released scorer is hash-pinned), so the agent cannot
+  influence its own metric.
+- #strong[Tail versus mean.] On simple parts (median 19 faces) mean
+  fidelity is high for both libraries and the difference sits in the
+  "badly wrong" tail; reporting only means would have hidden it, which
+  is why the badly-wrong rate is the headline metric.
+- #strong[What was and was not re-run.] All measured outputs here are
+  first-party: the DeepCAD runs were done for the paper, and the
+  200-part benchmark and token comparison are the released runs of the
+  SDK repository. None were repeated during this assignment, and each
+  has one run per arm, so I report no run-to-run mean or variance. C2
+  (needs the 1K subset and three external checkpoints) was not run at
+  all. The new Hardest23 harness has offline integration checks only;
+  these are not LLM reconstruction measurements.
+
+== 7. Conclusions and recommendations
+<conclusions-and-recommendations>
+#strong[What is reproducible.] My DeepCAD runs show C1's ordering, apart
+from the 0.45/0.46 Pass\@1 discrepancy. The SDK's advantage over
+CadQuery appears, under one LLM and one run per arm, in the released
+200-part benchmark: 4.4% vs 15.6% badly-wrong models (paired p = 0.002),
+0.006 mm vs 2.885 mm mean surface error, 181 vs 173 valid deliveries,
+and up to 6.5× fewer tokens than an industrial CAD driven through its
+MCP.
+
+#strong[What is not established.] That the gain comes from the
+structured-error part of the contract (no ablation among the four
+sub-changes); that it holds under a stronger LLM, other parts, or
+repeated runs; and any direct comparison with the paper-era ECIP.
+
+#strong[Recommendations for future users.] (1) Re-run each arm 3--5
+times and report mean and variance; (2) ablate the SDK's four
+sub-changes one at a time, with at least "measured errors off" as the
+first; (3) run a stronger LLM on the same 200 parts to test whether the
+gap shrinks; (4) report the badly-wrong rate next to means, since means
+hide the tail. Artifacts: this repository (protocol, provenance-tracked
+results, a runnable paired harness, Hardest23 cases, and pipeline tests), this report, and the recorded
 presentation.

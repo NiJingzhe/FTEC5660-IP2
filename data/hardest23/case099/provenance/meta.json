@@ -1,0 +1,47 @@
+{
+  "schema": "cad-authorized-testset/item@2",
+  "id": "d8a510c0e31b974509d7ac9d16f6fce8d7de2d2f153837cd0fe463d4da3903d0",
+  "test_index": 99,
+  "split": "test",
+  "license": "GPL-3.0-only",
+  "source_verified": true,
+  "native_sha256_equals_item_id": true,
+  "provenance": {
+    "original_filename": "tangent_az.SLDPRT",
+    "fixed_source_url": "https://raw.githubusercontent.com/alanzjl/AlkaidMount/4385d2e870a6c04702c017f0e358b0c6934889fd/CAD/Tangent/tangent_az.SLDPRT",
+    "commit": "4385d2e870a6c04702c017f0e358b0c6934889fd",
+    "doi": null,
+    "creators": [
+      {
+        "name": "alanzjl/AlkaidMount contributors"
+      }
+    ],
+    "license_evidence": "licenses/alanzjl__AlkaidMount/evidence.json",
+    "scope_basis": "Author README identifies own build and ALL design files including CAD; root LICENSE applies GPL-3.0 to the design project. CAD/parts vendor directory excluded."
+  },
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 2124.5135042222378,
+    "area_mm2": 1384.1339147633505,
+    "bbox_mm": [
+      9.630000200000001,
+      13.276932439180635,
+      22.0
+    ],
+    "surface_types": {
+      "GeomAbs_Plane": 7,
+      "GeomAbs_Cylinder": 4
+    },
+    "geometry_signature": "78a4a2c9aa668e553070343f4f4df1b92d3666b990d8eeacbdb556fad4721688",
+    "coarse_signature": "c807eeedd3407b6d1beabc38c18dec3030ed935602fc1057085866fe5ec3894c",
+    "solids": 1,
+    "faces": 11,
+    "edges": 44,
+    "shells": 1
+  },
+  "complexity": "simple",
+  "mesh_brep_volume_relative_difference": 6.334968024216114e-05,
+  "input_file": "items/d8a510c0e31b974509d7ac9d16f6fce8d7de2d2f153837cd0fe463d4da3903d0/brep.step",
+  "native_file_for_source_compliance_and_offline_review": "source_designs/d8a510c0e31b974509d7ac9d16f6fce8d7de2d2f153837cd0fe463d4da3903d0/original.sldprt"
+}

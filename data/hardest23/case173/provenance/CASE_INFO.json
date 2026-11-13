@@ -1,0 +1,35 @@
+{
+  "rank": 9,
+  "test_index": 173,
+  "case_id": "c130774665d399b7621835135dc0dadb45e876b0193a37c9e264d06c085990c3",
+  "original_filename": "TRL-0038-A.SLDPRT",
+  "source_url": "https://zenodo.org/records/6354859/files/2021-06-29 Trillium Drawings.zip!/2021-06-29 Trillium Drawings/TRL-0038-A.SLDPRT",
+  "license": "CC-BY-4.0",
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 23688.229594691446,
+    "area_mm2": 7176.268216542137,
+    "bbox_mm": [
+      20.0,
+      20.0,
+      64.00000019999999
+    ],
+    "surface_types": {
+      "GeomAbs_Plane": 28,
+      "GeomAbs_Cylinder": 4,
+      "GeomAbs_Cone": 7
+    },
+    "geometry_signature": "f3c683bffc90a3b6fd09c9bde105f794ef822af370e3fe1317b00c46f1e6341b",
+    "coarse_signature": "d581244b02702a0b205b395d27969cac5aa10a51179de20955a9b3a12e3258ee",
+    "solids": 1,
+    "faces": 39,
+    "edges": 150,
+    "shells": 1
+  },
+  "step_sha256": "0712c1a0967d1f5d5cdd443bff48b2e48511a66397d64917dab4483e1d39fdcd",
+  "original_dataset_step_path": "items/c130774665d399b7621835135dc0dadb45e876b0193a37c9e264d06c085990c3/brep.step",
+  "packaged_step_path": "cases/09_case173_c1307746/brep.step",
+  "native_source_path": "source_designs/c130774665d399b7621835135dc0dadb45e876b0193a37c9e264d06c085990c3/original.sldprt",
+  "license_evidence": "licenses/zenodo__6354859/evidence.json"
+}

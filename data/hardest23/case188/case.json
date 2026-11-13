@@ -1,0 +1,16 @@
+{
+  "format": "ip2-case/1",
+  "id": "case188",
+  "task": "step2code",
+  "kind": "part",
+  "units": "mm",
+  "split": "hardest23",
+  "input": {
+    "input/preview.png": "cd6fe36700f11559c05235ff466714180ae121174f9c65ca337ef7b385fc437d",
+    "input/target.step": "0e470062e8c5dfc9985622e7a7a24529bfbb8725e51f6bc887b845053c32b34b"
+  },
+  "gt": {
+    "gt/gt.step": "0e470062e8c5dfc9985622e7a7a24529bfbb8725e51f6bc887b845053c32b34b"
+  },
+  "notes": "Selected difficult subset of a 200-part bank; selection criterion not independently verified."
+}

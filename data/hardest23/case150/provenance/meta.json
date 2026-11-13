@@ -1,0 +1,47 @@
+{
+  "schema": "cad-authorized-testset/item@2",
+  "id": "6cc51f4fde5a1327d7c3871d113dfa7e2b07f83f85140d5dad549fcb8683dd76",
+  "test_index": 150,
+  "split": "test",
+  "license": "MIT",
+  "source_verified": true,
+  "native_sha256_equals_item_id": true,
+  "provenance": {
+    "original_filename": "arm_wrist-0426.SLDPRT",
+    "fixed_source_url": "https://raw.githubusercontent.com/MengyangGao/hand_exoskeleton/a5d6a1de1cad0b27d47d62ecb8d4f4c7c4600ad7/mechanics/CAD_SolidWorks/arm_wrist-0426.SLDPRT",
+    "commit": "a5d6a1de1cad0b27d47d62ecb8d4f4c7c4600ad7",
+    "doi": null,
+    "creators": [
+      {
+        "name": "MengyangGao/hand_exoskeleton contributors"
+      }
+    ],
+    "license_evidence": "licenses/MengyangGao__hand_exoskeleton/evidence.json",
+    "scope_basis": "Authors publish their hand-exoskeleton design with the accompanying research paper and detailed original mechanism description; MIT LICENSE copyright Kevin Stark is fixed at the same commit. Selected named linkages and author-designed arm/wrist are described by that mechanism, with off-the-shelf components excluded."
+  },
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 21128.49936778222,
+    "area_mm2": 8063.364218825434,
+    "bbox_mm": [
+      24.00000010000001,
+      48.00000000000001,
+      48.00000000000001
+    ],
+    "surface_types": {
+      "GeomAbs_Cylinder": 20,
+      "GeomAbs_Plane": 23
+    },
+    "geometry_signature": "bd97d9be331bc9c78e3253e241ae226b64bcc17e4cddba7e62953d919e692dca",
+    "coarse_signature": "99bd4035885a382024a1d8d563fc7922446f4685fdfb624714c6678e8bbfd6b1",
+    "solids": 1,
+    "faces": 43,
+    "edges": 230,
+    "shells": 1
+  },
+  "complexity": "medium",
+  "mesh_brep_volume_relative_difference": 0.0006626660736567335,
+  "input_file": "items/6cc51f4fde5a1327d7c3871d113dfa7e2b07f83f85140d5dad549fcb8683dd76/brep.step",
+  "native_file_for_source_compliance_and_offline_review": "source_designs/6cc51f4fde5a1327d7c3871d113dfa7e2b07f83f85140d5dad549fcb8683dd76/original.sldprt"
+}

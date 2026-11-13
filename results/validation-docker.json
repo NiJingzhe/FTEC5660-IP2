@@ -1,0 +1,15 @@
+{
+  "cases_validated": 23,
+  "image_ids": {
+    "simplecadapi": "sha256:0c24839295f1b1367e30bbd354936e0afa94a8cae9cd3f8933512d8e4838ad1c",
+    "cadquery": "sha256:95db6d9cad19aa8a8ca8aa6c6de9598e38706b660c7da39641705caf79c39865"
+  },
+  "cadquery_export_and_identity": "passed",
+  "simplecadapi_export_and_identity": "passed",
+  "explicit_submission_export": "passed",
+  "nonidentity_geometry_scoring": "passed",
+  "target_unavailable_to_submission": "passed",
+  "scope": "Offline smoke only; no LLM reconstruction or benchmark claim.",
+  "execution": "docker",
+  "metric": "reconstruction_geometry/1"
+}

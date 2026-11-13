@@ -1,0 +1,35 @@
+{
+  "rank": 6,
+  "test_index": 98,
+  "case_id": "d00c6227e54907d4e92ec59e041dcdac4084c873ed095e2cdaf45844e9432935",
+  "original_filename": "HJK.SLDPRT",
+  "source_url": "https://github.com/MengyangGao/hand_exoskeleton/blob/HEAD/mechanics/CAD_SolidWorks/HJK.SLDPRT",
+  "license": "MIT",
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 1019.6027354820758,
+    "area_mm2": 1003.6842886352711,
+    "bbox_mm": [
+      4.500000200000001,
+      14.838834764831798,
+      41.83883476483189
+    ],
+    "surface_types": {
+      "GeomAbs_Cylinder": 9,
+      "GeomAbs_Plane": 7,
+      "GeomAbs_Torus": 3
+    },
+    "geometry_signature": "72335e493338996a5f4db5826cf747ad4c168757e34df7f399b911d119201471",
+    "coarse_signature": "f22f6def58bfad2d24dbf3950dbf1c9b1aaf010a551f97afe87d947c547654a2",
+    "solids": 1,
+    "faces": 19,
+    "edges": 98,
+    "shells": 1
+  },
+  "step_sha256": "de5c2c1592e699b8144983f3b164d49ae764b77cec9e0ad83825cb821550c2f0",
+  "original_dataset_step_path": "items/d00c6227e54907d4e92ec59e041dcdac4084c873ed095e2cdaf45844e9432935/brep.step",
+  "packaged_step_path": "cases/06_case098_d00c6227/brep.step",
+  "native_source_path": "source_designs/d00c6227e54907d4e92ec59e041dcdac4084c873ed095e2cdaf45844e9432935/original.sldprt",
+  "license_evidence": "licenses/MengyangGao__hand_exoskeleton/evidence.json"
+}

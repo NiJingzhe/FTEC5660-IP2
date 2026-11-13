@@ -1,0 +1,15 @@
+Sample: 96715c9ecddf5d0c608397f9e49e282d5b758b14d09a0933a155306ff3894b06
+Original title/project: esa-prl/ExoMy
+Original creators/project contributors: esa-prl/ExoMy contributors
+Project/versioned record: https://github.com/esa-prl/ExoMy
+Original file: P29_Wheel_Bracket_Fixing_Plate.SLDPRT
+Fixed source URL: https://raw.githubusercontent.com/esa-prl/ExoMy/179a99925ea48a222fb72a207de20b3bbc3db64c/Mechanical%20Design/P29_Wheel_Bracket_Fixing_Plate.SLDPRT
+Source version/hash: 179a99925ea48a222fb72a207de20b3bbc3db64c
+License: GPL-3.0-only
+License URL: https://www.gnu.org/licenses/gpl-3.0.html
+Full license and original notices: licenses/esa-prl__ExoMy
+Evidence: licenses/esa-prl__ExoMy/evidence.json
+Editable native source: source_designs/96715c9ecddf5d0c608397f9e49e282d5b758b14d09a0933a155306ff3894b06/original.sldprt
+Original SLDPRT SHA-256: 96715c9ecddf5d0c608397f9e49e282d5b758b14d09a0933a155306ff3894b06
+Changes: The native source is copied unchanged. STEP/GLB artifacts are copied from the supplied dataset; previews are rendered from GLB in this verification pass. These are not claimed to be upstream exports. Curated metadata and test indices were created on 2026-10-22. Converted model artifacts retain the upstream license. No upstream endorsement is claimed.
+Scope evidence: ESA project distributes SLDPRT/STEP mechanical designs under repository GPL-3.0. Mechanical Design/README.md explicitly identifies Pxx files as project 3D-printed parts and separates Purchased Parts/Fasteners.

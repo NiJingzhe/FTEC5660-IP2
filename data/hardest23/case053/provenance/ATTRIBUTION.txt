@@ -1,0 +1,16 @@
+Sample: 6179e6b3f41eab2cd967cf8abbd1684734e44ef88435039cf289b6f66fd19c28
+Original title/project: LUPA CAD Files
+Original creators/project contributors: Beringer, Courtney; Bosma, Bret; Robertson, Bryson
+Project/versioned record: https://zenodo.org/records/8156350
+Original file: LUPA-A1150-P001.SLDPRT
+Fixed source URL: https://zenodo.org/api/records/8156350/files/LUPA%20SOLIDWORKS.zip/content!/LUPA SOLIDWORKS/LUPA-A1150-P001.SLDPRT
+Source version/hash: Zenodo record 8156350
+License: CC-BY-4.0
+License URL: https://creativecommons.org/licenses/by/4.0/
+Full license and original notices: licenses/zenodo__8156350
+Evidence: licenses/zenodo__8156350/evidence.json
+Editable native source: source_designs/6179e6b3f41eab2cd967cf8abbd1684734e44ef88435039cf289b6f66fd19c28/original.sldprt
+Original SLDPRT SHA-256: 6179e6b3f41eab2cd967cf8abbd1684734e44ef88435039cf289b6f66fd19c28
+Changes: The native source is copied unchanged. STEP/GLB artifacts are copied from the supplied dataset; previews are rendered from GLB in this verification pass. These are not claimed to be upstream exports. Curated metadata and test indices were created on 2026-10-22. Converted model artifacts retain the upstream license. No upstream endorsement is claimed.
+Scope evidence: Versioned Zenodo CAD/hardware design record explicitly declares this license; archive/file bytes were checked against record checksums and native file SHA-256 matches the dataset item ID.
+DOI: https://doi.org/10.5281/zenodo.8156350

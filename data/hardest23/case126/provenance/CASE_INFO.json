@@ -1,0 +1,35 @@
+{
+  "rank": 1,
+  "test_index": 126,
+  "case_id": "25393c1c8be5001540c07f6714aeef34d2988d7cdee516dff25bcaf6624fce3f",
+  "original_filename": "手指连杆.SLDPRT",
+  "source_url": "https://github.com/Ragtime-LAB/RhinoV2.0_Gripper/blob/HEAD/0_Solidworks2025/手指连杆.SLDPRT",
+  "license": "GPL-3.0-only",
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 6133.798027858095,
+    "area_mm2": 3105.4464821935703,
+    "bbox_mm": [
+      18.000033298810386,
+      22.597419668190966,
+      30.500000000000007
+    ],
+    "surface_types": {
+      "GeomAbs_Cylinder": 20,
+      "GeomAbs_Plane": 30,
+      "GeomAbs_Cone": 8
+    },
+    "geometry_signature": "e7542bf048f6c1e5b67fc9e0f88884fbefdc0e7507958af522b291ae5669cd10",
+    "coarse_signature": "7d64d1be2de836fa2da442668dfcac3dc5e68679a7b8383116c86a575365a82b",
+    "solids": 1,
+    "faces": 58,
+    "edges": 296,
+    "shells": 1
+  },
+  "step_sha256": "1845d7cbe3f9c850dca1758685b6df39d648a7ad00056e9c62cfd2588e4eef22",
+  "original_dataset_step_path": "items/25393c1c8be5001540c07f6714aeef34d2988d7cdee516dff25bcaf6624fce3f/brep.step",
+  "packaged_step_path": "cases/01_case126_25393c1c/brep.step",
+  "native_source_path": "source_designs/25393c1c8be5001540c07f6714aeef34d2988d7cdee516dff25bcaf6624fce3f/original.sldprt",
+  "license_evidence": "licenses/Ragtime-LAB__RhinoV2.0_Gripper/evidence.json"
+}

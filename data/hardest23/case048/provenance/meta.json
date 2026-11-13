@@ -1,0 +1,53 @@
+{
+  "schema": "cad-authorized-testset/item@2",
+  "id": "581dd79fe7e9f375ce6e882798a2c27a7e58f41caed1ecaddde3e063650943b5",
+  "test_index": 48,
+  "split": "test",
+  "license": "CC-BY-4.0",
+  "source_verified": true,
+  "native_sha256_equals_item_id": true,
+  "provenance": {
+    "original_filename": "Vodilo 3.2 - PLA.SLDPRT",
+    "fixed_source_url": "https://zenodo.org/api/records/14808281/files/Assembly%20Solidworks%203.2.zip/content!/Vodilo 3.2 - PLA.SLDPRT",
+    "commit": null,
+    "doi": "10.5281/zenodo.14808281",
+    "creators": [
+      {
+        "name": "Gal, Stanovnik",
+        "affiliation": "University of Ljubljana"
+      },
+      {
+        "name": "Janko, Slavič",
+        "affiliation": "University of Ljubljana",
+        "orcid": "0000-0002-5982-8377"
+      }
+    ],
+    "license_evidence": "licenses/zenodo__14808281/evidence.json",
+    "scope_basis": "Versioned Zenodo CAD/hardware design record explicitly declares this license; archive/file bytes were checked against record checksums and native file SHA-256 matches the dataset item ID."
+  },
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 1214.8026493985903,
+    "area_mm2": 1542.9163630782703,
+    "bbox_mm": [
+      4.0,
+      23.4,
+      30.0
+    ],
+    "surface_types": {
+      "GeomAbs_Plane": 15,
+      "GeomAbs_Cylinder": 3
+    },
+    "geometry_signature": "232cf1c0db9fcb99e7a5a49238efd53f4c0fcfeff49242194443885cd2c5da3c",
+    "coarse_signature": "3e249a6fe556eaf30dc5f7093adc80795bf3c363b094463034fb72928e3d628f",
+    "solids": 1,
+    "faces": 18,
+    "edges": 96,
+    "shells": 1
+  },
+  "complexity": "simple",
+  "mesh_brep_volume_relative_difference": 0.008121509246714875,
+  "input_file": "items/581dd79fe7e9f375ce6e882798a2c27a7e58f41caed1ecaddde3e063650943b5/brep.step",
+  "native_file_for_source_compliance_and_offline_review": "source_designs/581dd79fe7e9f375ce6e882798a2c27a7e58f41caed1ecaddde3e063650943b5/original.sldprt"
+}

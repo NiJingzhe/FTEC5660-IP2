@@ -1,0 +1,15 @@
+Sample: 25393c1c8be5001540c07f6714aeef34d2988d7cdee516dff25bcaf6624fce3f
+Original title/project: Ragtime-LAB/RhinoV2.0_Gripper
+Original creators/project contributors: Ragtime-LAB/RhinoV2.0_Gripper contributors
+Project/versioned record: https://github.com/Ragtime-LAB/RhinoV2.0_Gripper
+Original file: 手指连杆.SLDPRT
+Fixed source URL: https://raw.githubusercontent.com/Ragtime-LAB/RhinoV2.0_Gripper/099a3cde0b35ee1f2a6a49e97a60686d2dcaaa3f/0_Solidworks2025/%E6%89%8B%E6%8C%87%E8%BF%9E%E6%9D%86.SLDPRT
+Source version/hash: 099a3cde0b35ee1f2a6a49e97a60686d2dcaaa3f
+License: GPL-3.0-only
+License URL: https://www.gnu.org/licenses/gpl-3.0.html
+Full license and original notices: licenses/Ragtime-LAB__RhinoV2.0_Gripper
+Evidence: licenses/Ragtime-LAB__RhinoV2.0_Gripper/evidence.json
+Editable native source: source_designs/25393c1c8be5001540c07f6714aeef34d2988d7cdee516dff25bcaf6624fce3f/original.sldprt
+Original SLDPRT SHA-256: 25393c1c8be5001540c07f6714aeef34d2988d7cdee516dff25bcaf6624fce3f
+Changes: The native source is copied unchanged. STEP/GLB artifacts are copied from the supplied dataset; previews are rendered from GLB in this verification pass. These are not claimed to be upstream exports. Curated metadata and test indices were created on 2026-10-22. Converted model artifacts retain the upstream license. No upstream endorsement is claimed.
+Scope evidence: Bilingual README describes the gripper mechanical design and SolidWorks sources and licenses this project under GPL-3.0; only original linkage, fingers and covers selected.

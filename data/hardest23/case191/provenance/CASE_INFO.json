@@ -1,0 +1,35 @@
+{
+  "rank": 8,
+  "test_index": 191,
+  "case_id": "0bc270f7ebeac6e1aaa93ac29cf123c107b28729c5f3498fd8ae428d4e1a87a1",
+  "original_filename": "Heatsink Tapping Tool.SLDPRT",
+  "source_url": "https://github.com/tschicki/PS2-Portable/blob/HEAD/Solidworks/Output/Output Assembly/Heatsink Tapping Tool.SLDPRT",
+  "license": "MIT",
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 7142.967131746964,
+    "area_mm2": 3047.218846598913,
+    "bbox_mm": [
+      6.500000200000186,
+      39.01528418243932,
+      39.0152841824394
+    ],
+    "surface_types": {
+      "GeomAbs_Cylinder": 24,
+      "GeomAbs_Plane": 14,
+      "GeomAbs_Cone": 48
+    },
+    "geometry_signature": "4b9dd05ea6f9e74c74ea4ac5831274baaf1620732a3c717622103fac1c8884f3",
+    "coarse_signature": "45c0684d21c3bc6ba3fbf2b46f07d263fb78440b9d28a99157b10b40cdaa209f",
+    "solids": 1,
+    "faces": 86,
+    "edges": 392,
+    "shells": 1
+  },
+  "step_sha256": "d2239f2d9de03b90e6ee0aa086cf02bc5ca926c2ad673ebd5bfaae3ffbf6d19d",
+  "original_dataset_step_path": "items/0bc270f7ebeac6e1aaa93ac29cf123c107b28729c5f3498fd8ae428d4e1a87a1/brep.step",
+  "packaged_step_path": "cases/08_case191_0bc270f7/brep.step",
+  "native_source_path": "source_designs/0bc270f7ebeac6e1aaa93ac29cf123c107b28729c5f3498fd8ae428d4e1a87a1/original.sldprt",
+  "license_evidence": "licenses/tschicki__PS2-Portable/evidence.json"
+}

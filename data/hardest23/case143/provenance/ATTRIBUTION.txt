@@ -1,0 +1,15 @@
+Sample: 4672f9d1f8335849ab9bdea6732b17c66ab8abdda82a51a63b640cf24c329ab6
+Original title/project: Skythinker616/foc-wheel-legged-robot
+Original creators/project contributors: Skythinker616/foc-wheel-legged-robot contributors
+Project/versioned record: https://github.com/Skythinker616/foc-wheel-legged-robot
+Original file: 主控支架.SLDPRT
+Fixed source URL: https://raw.githubusercontent.com/Skythinker616/foc-wheel-legged-robot/e2444395dd3a76c20b0683fbb1e123c21186a502/solidworks/%E4%B8%BB%E6%8E%A7%E6%94%AF%E6%9E%B6.SLDPRT
+Source version/hash: e2444395dd3a76c20b0683fbb1e123c21186a502
+License: GPL-3.0-only
+License URL: https://www.gnu.org/licenses/gpl-3.0.html
+Full license and original notices: licenses/Skythinker616__foc-wheel-legged-robot
+Evidence: licenses/Skythinker616__foc-wheel-legged-robot/evidence.json
+Editable native source: source_designs/4672f9d1f8335849ab9bdea6732b17c66ab8abdda82a51a63b640cf24c329ab6/original.sldprt
+Original SLDPRT SHA-256: 4672f9d1f8335849ab9bdea6732b17c66ab8abdda82a51a63b640cf24c329ab6
+Changes: The native source is copied unchanged. STEP/GLB artifacts are copied from the supplied dataset; previews are rendered from GLB in this verification pass. These are not claimed to be upstream exports. Curated metadata and test indices were created on 2026-10-22. Converted model artifacts retain the upstream license. No upstream endorsement is claimed.
+Scope evidence: Project publishes SolidWorks-designed mechanical structure with GPL-3.0 badge and LICENSE. CAD README distinguishes author-designed printed structural parts from purchased components; only six named project parts allowed.

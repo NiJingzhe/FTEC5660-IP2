@@ -1,0 +1,48 @@
+{
+  "schema": "cad-authorized-testset/item@2",
+  "id": "20b0ddde7e732af4388db8b0a5cec0482bf3661c06181bea69438bd6d5a8e0c6",
+  "test_index": 12,
+  "split": "test",
+  "license": "CC-BY-4.0",
+  "source_verified": true,
+  "native_sha256_equals_item_id": true,
+  "provenance": {
+    "original_filename": "MM Fiber Spring Key.SLDPRT",
+    "fixed_source_url": "https://zenodo.org/api/records/6354859/files/Trillium2_Robot_2022-03-14_solidworks2016.zip/content!/MM Fiber Spring Key.SLDPRT",
+    "commit": null,
+    "doi": "10.5281/zenodo.6354859",
+    "creators": [
+      {
+        "name": "Silber, Joseph Harry",
+        "affiliation": "Lawrence Berkeley National Lab"
+      }
+    ],
+    "license_evidence": "licenses/zenodo__6354859/evidence.json",
+    "scope_basis": "Versioned Zenodo CAD/hardware design record explicitly declares this license; archive/file bytes were checked against record checksums and native file SHA-256 matches the dataset item ID."
+  },
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 74.62229553639874,
+    "area_mm2": 442.4107635932218,
+    "bbox_mm": [
+      0.381,
+      12.000000000000009,
+      38.000000000000014
+    ],
+    "surface_types": {
+      "GeomAbs_Plane": 13,
+      "GeomAbs_Cylinder": 3
+    },
+    "geometry_signature": "938e03e3fcf6e0aaef73fdb998e1e086317f1d99bd9c8644e31408cd0d86e04d",
+    "coarse_signature": "ddded7e3cf66a5448ba5d4f549a8ba63877993765e41aa24b8bda78b73df9220",
+    "solids": 1,
+    "faces": 16,
+    "edges": 84,
+    "shells": 1
+  },
+  "complexity": "simple",
+  "mesh_brep_volume_relative_difference": 0.0007914214731011781,
+  "input_file": "items/20b0ddde7e732af4388db8b0a5cec0482bf3661c06181bea69438bd6d5a8e0c6/brep.step",
+  "native_file_for_source_compliance_and_offline_review": "source_designs/20b0ddde7e732af4388db8b0a5cec0482bf3661c06181bea69438bd6d5a8e0c6/original.sldprt"
+}

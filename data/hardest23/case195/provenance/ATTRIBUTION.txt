@@ -1,0 +1,15 @@
+Sample: 56e3721dc6c2dcfc9832d8fcb55a53352c44992dadd8bc4a965f6d1009aacc2c
+Original title/project: viam-labs/chargla
+Original creators/project contributors: viam-labs/chargla contributors
+Project/versioned record: https://github.com/viam-labs/chargla
+Original file: VTCR-22-0017.SLDPRT
+Fixed source URL: https://raw.githubusercontent.com/viam-labs/chargla/86d1211dc688ae93f97459811478da3433cb5e9a/CAD%20SLDPRT%20files/VTCR-22-0017.SLDPRT
+Source version/hash: 86d1211dc688ae93f97459811478da3433cb5e9a
+License: Apache-2.0
+License URL: https://www.apache.org/licenses/LICENSE-2.0
+Full license and original notices: licenses/viam-labs__chargla
+Evidence: licenses/viam-labs__chargla/evidence.json
+Editable native source: source_designs/56e3721dc6c2dcfc9832d8fcb55a53352c44992dadd8bc4a965f6d1009aacc2c/original.sldprt
+Original SLDPRT SHA-256: 56e3721dc6c2dcfc9832d8fcb55a53352c44992dadd8bc4a965f6d1009aacc2c
+Changes: The native source is copied unchanged. STEP/GLB artifacts are copied from the supplied dataset; previews are rendered from GLB in this verification pass. These are not claimed to be upstream exports. Curated metadata and test indices were created on 2026-10-22. Converted model artifacts retain the upstream license. No upstream endorsement is claimed.
+Scope evidence: Viam/Simone Giertz original Chargla design repository supplies its CAD SLDPRT files with Apache-2.0 LICENSE. README explicitly identifies the CAD distribution and excludes third-party GrabCAD Mecanum wheel/motor assemblies. Only supplied VTCR-numbered custom design files selected and byte-matched.

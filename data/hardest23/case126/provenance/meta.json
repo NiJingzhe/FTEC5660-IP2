@@ -1,0 +1,48 @@
+{
+  "schema": "cad-authorized-testset/item@2",
+  "id": "25393c1c8be5001540c07f6714aeef34d2988d7cdee516dff25bcaf6624fce3f",
+  "test_index": 126,
+  "split": "test",
+  "license": "GPL-3.0-only",
+  "source_verified": true,
+  "native_sha256_equals_item_id": true,
+  "provenance": {
+    "original_filename": "手指连杆.SLDPRT",
+    "fixed_source_url": "https://raw.githubusercontent.com/Ragtime-LAB/RhinoV2.0_Gripper/099a3cde0b35ee1f2a6a49e97a60686d2dcaaa3f/0_Solidworks2025/%E6%89%8B%E6%8C%87%E8%BF%9E%E6%9D%86.SLDPRT",
+    "commit": "099a3cde0b35ee1f2a6a49e97a60686d2dcaaa3f",
+    "doi": null,
+    "creators": [
+      {
+        "name": "Ragtime-LAB/RhinoV2.0_Gripper contributors"
+      }
+    ],
+    "license_evidence": "licenses/Ragtime-LAB__RhinoV2.0_Gripper/evidence.json",
+    "scope_basis": "Bilingual README describes the gripper mechanical design and SolidWorks sources and licenses this project under GPL-3.0; only original linkage, fingers and covers selected."
+  },
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 6133.798027858095,
+    "area_mm2": 3105.4464821935703,
+    "bbox_mm": [
+      18.000033298810386,
+      22.597419668190966,
+      30.500000000000007
+    ],
+    "surface_types": {
+      "GeomAbs_Cylinder": 20,
+      "GeomAbs_Plane": 30,
+      "GeomAbs_Cone": 8
+    },
+    "geometry_signature": "e7542bf048f6c1e5b67fc9e0f88884fbefdc0e7507958af522b291ae5669cd10",
+    "coarse_signature": "7d64d1be2de836fa2da442668dfcac3dc5e68679a7b8383116c86a575365a82b",
+    "solids": 1,
+    "faces": 58,
+    "edges": 296,
+    "shells": 1
+  },
+  "complexity": "medium",
+  "mesh_brep_volume_relative_difference": 0.004833590600904234,
+  "input_file": "items/25393c1c8be5001540c07f6714aeef34d2988d7cdee516dff25bcaf6624fce3f/brep.step",
+  "native_file_for_source_compliance_and_offline_review": "source_designs/25393c1c8be5001540c07f6714aeef34d2988d7cdee516dff25bcaf6624fce3f/original.sldprt"
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "cad-authorized-testset/item@2",
+  "id": "b07ff02019a73389a5221b267033b529163a65e7f149c9f613090821f1ff2f9f",
+  "test_index": 170,
+  "split": "test",
+  "license": "CC-BY-4.0",
+  "source_verified": true,
+  "native_sha256_equals_item_id": true,
+  "provenance": {
+    "original_filename": "screw_2.SLDPRT",
+    "fixed_source_url": "https://osf.io/download/3ge26/",
+    "commit": null,
+    "doi": null,
+    "creators": [
+      {
+        "name": "Luiz Fernando Pinto de Oliveira"
+      }
+    ],
+    "license_evidence": "licenses/osf__gu4zx/evidence.json",
+    "scope_basis": "OSF component explicitly titled SolidWorks files declares its own CC-BY-4.0 license relation; contributors and file version/hash records retained."
+  },
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 76.16499126759457,
+    "area_mm2": 206.58767701478195,
+    "bbox_mm": [
+      4.500000100000043,
+      7.330127018922196,
+      11.696152422706636
+    ],
+    "surface_types": {
+      "GeomAbs_Plane": 27,
+      "GeomAbs_Cylinder": 5
+    },
+    "geometry_signature": "682dbe383d11c84c21022b1545beb07f4505398bd3be4fac54f0732ea6faf92e",
+    "coarse_signature": "b4f47a0c951899ec3efff704d26f9ba0d7f2a0e31d1cb79d0c45780873453414",
+    "solids": 1,
+    "faces": 32,
+    "edges": 158,
+    "shells": 1
+  },
+  "complexity": "medium",
+  "mesh_brep_volume_relative_difference": 0.0021761606004031585,
+  "input_file": "items/b07ff02019a73389a5221b267033b529163a65e7f149c9f613090821f1ff2f9f/brep.step",
+  "native_file_for_source_compliance_and_offline_review": "source_designs/b07ff02019a73389a5221b267033b529163a65e7f149c9f613090821f1ff2f9f/original.sldprt"
+}

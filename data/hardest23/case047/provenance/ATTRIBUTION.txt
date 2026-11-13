@@ -1,0 +1,15 @@
+Sample: 5763e01dc3e3adae302e96d8c5608f7b8eaf33c7bcc08ef0c035a141dc8e9a9a
+Original title/project: SolidWorks files
+Original creators/project contributors: Luiz Fernando Pinto de Oliveira
+Project/versioned record: https://osf.io/gu4zx/
+Original file: part_2.SLDPRT
+Fixed source URL: https://osf.io/download/pft37/
+Source version/hash: 5763e01dc3e3adae302e96d8c5608f7b8eaf33c7bcc08ef0c035a141dc8e9a9a
+License: CC-BY-4.0
+License URL: https://creativecommons.org/licenses/by/4.0/
+Full license and original notices: licenses/osf__gu4zx
+Evidence: licenses/osf__gu4zx/evidence.json
+Editable native source: source_designs/5763e01dc3e3adae302e96d8c5608f7b8eaf33c7bcc08ef0c035a141dc8e9a9a/original.sldprt
+Original SLDPRT SHA-256: 5763e01dc3e3adae302e96d8c5608f7b8eaf33c7bcc08ef0c035a141dc8e9a9a
+Changes: The native source is copied unchanged. STEP/GLB artifacts are copied from the supplied dataset; previews are rendered from GLB in this verification pass. These are not claimed to be upstream exports. Curated metadata and test indices were created on 2026-10-22. Converted model artifacts retain the upstream license. No upstream endorsement is claimed.
+Scope evidence: OSF component explicitly titled SolidWorks files declares its own CC-BY-4.0 license relation; contributors and file version/hash records retained.

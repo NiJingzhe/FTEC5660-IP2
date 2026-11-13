@@ -1,0 +1,16 @@
+Sample: 581dd79fe7e9f375ce6e882798a2c27a7e58f41caed1ecaddde3e063650943b5
+Original title/project: Single-Process 3D-Printed Linear Incremental Encoder
+Original creators/project contributors: Gal, Stanovnik; Janko, Slavič
+Project/versioned record: https://zenodo.org/records/14808281
+Original file: Vodilo 3.2 - PLA.SLDPRT
+Fixed source URL: https://zenodo.org/api/records/14808281/files/Assembly%20Solidworks%203.2.zip/content!/Vodilo 3.2 - PLA.SLDPRT
+Source version/hash: Zenodo record 14808281
+License: CC-BY-4.0
+License URL: https://creativecommons.org/licenses/by/4.0/
+Full license and original notices: licenses/zenodo__14808281
+Evidence: licenses/zenodo__14808281/evidence.json
+Editable native source: source_designs/581dd79fe7e9f375ce6e882798a2c27a7e58f41caed1ecaddde3e063650943b5/original.sldprt
+Original SLDPRT SHA-256: 581dd79fe7e9f375ce6e882798a2c27a7e58f41caed1ecaddde3e063650943b5
+Changes: The native source is copied unchanged. STEP/GLB artifacts are copied from the supplied dataset; previews are rendered from GLB in this verification pass. These are not claimed to be upstream exports. Curated metadata and test indices were created on 2026-10-22. Converted model artifacts retain the upstream license. No upstream endorsement is claimed.
+Scope evidence: Versioned Zenodo CAD/hardware design record explicitly declares this license; archive/file bytes were checked against record checksums and native file SHA-256 matches the dataset item ID.
+DOI: https://doi.org/10.5281/zenodo.14808281

@@ -1,0 +1,47 @@
+{
+  "schema": "cad-authorized-testset/item@2",
+  "id": "4672f9d1f8335849ab9bdea6732b17c66ab8abdda82a51a63b640cf24c329ab6",
+  "test_index": 143,
+  "split": "test",
+  "license": "GPL-3.0-only",
+  "source_verified": true,
+  "native_sha256_equals_item_id": true,
+  "provenance": {
+    "original_filename": "主控支架.SLDPRT",
+    "fixed_source_url": "https://raw.githubusercontent.com/Skythinker616/foc-wheel-legged-robot/e2444395dd3a76c20b0683fbb1e123c21186a502/solidworks/%E4%B8%BB%E6%8E%A7%E6%94%AF%E6%9E%B6.SLDPRT",
+    "commit": "e2444395dd3a76c20b0683fbb1e123c21186a502",
+    "doi": null,
+    "creators": [
+      {
+        "name": "Skythinker616/foc-wheel-legged-robot contributors"
+      }
+    ],
+    "license_evidence": "licenses/Skythinker616__foc-wheel-legged-robot/evidence.json",
+    "scope_basis": "Project publishes SolidWorks-designed mechanical structure with GPL-3.0 badge and LICENSE. CAD README distinguishes author-designed printed structural parts from purchased components; only six named project parts allowed."
+  },
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 3836.3950600369812,
+    "area_mm2": 4022.3595973976962,
+    "bbox_mm": [
+      3.0000001999999997,
+      50.0,
+      60.000000000000014
+    ],
+    "surface_types": {
+      "GeomAbs_Plane": 19,
+      "GeomAbs_Cylinder": 32
+    },
+    "geometry_signature": "a5c6312716baa684ba64a8b37e4a91c73e67ce9a2bc5f8e995afddda6e680150",
+    "coarse_signature": "7d455a4475073fb673b1f99d249d4247d38263a0f49973555f5daf7b872ddd08",
+    "solids": 1,
+    "faces": 51,
+    "edges": 294,
+    "shells": 1
+  },
+  "complexity": "medium",
+  "mesh_brep_volume_relative_difference": 0.01044024426035842,
+  "input_file": "items/4672f9d1f8335849ab9bdea6732b17c66ab8abdda82a51a63b640cf24c329ab6/brep.step",
+  "native_file_for_source_compliance_and_offline_review": "source_designs/4672f9d1f8335849ab9bdea6732b17c66ab8abdda82a51a63b640cf24c329ab6/original.sldprt"
+}

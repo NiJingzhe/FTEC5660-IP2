@@ -1,0 +1,35 @@
+{
+  "rank": 5,
+  "test_index": 113,
+  "case_id": "052413fceb72abfcf0a2534e695894f295b2522fdf025ea1f535eb88779d8632",
+  "original_filename": "0007-RINSIDEPAN IR.SLDPRT",
+  "source_url": "https://zenodo.org/records/20344658/files/ned3-010_twisted_pair_preparation_device.zip!/ned3-010_twisted_pair_preparation_device/Motorized Unit/FINAL DRAWINGS AND PARTS/CAD/0007-RINSIDEPAN IR.SLDPRT",
+  "license": "CC-BY-4.0",
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 492791.77062043204,
+    "area_mm2": 220447.6118451966,
+    "bbox_mm": [
+      38.10000010000002,
+      302.26000020000026,
+      303.53000020000013
+    ],
+    "surface_types": {
+      "GeomAbs_Plane": 29,
+      "GeomAbs_BSplineSurface": 6,
+      "GeomAbs_Cylinder": 10
+    },
+    "geometry_signature": "4dadd2a006e07ab4ecd7a9f7abe4ee6acf5668ba6cf4797c626363809cf27c7f",
+    "coarse_signature": "75961bbf9322cb9ed9e0a001da8d567fde896388c76bf348bc8af90b104bb08c",
+    "solids": 1,
+    "faces": 45,
+    "edges": 194,
+    "shells": 1
+  },
+  "step_sha256": "ae887132e1f7807dd628814680a143f364f21269c81f0f7e5dcb2d8026aea000",
+  "original_dataset_step_path": "items/052413fceb72abfcf0a2534e695894f295b2522fdf025ea1f535eb88779d8632/brep.step",
+  "packaged_step_path": "cases/05_case113_052413fc/brep.step",
+  "native_source_path": "source_designs/052413fceb72abfcf0a2534e695894f295b2522fdf025ea1f535eb88779d8632/original.sldprt",
+  "license_evidence": "licenses/zenodo__20344658/evidence.json"
+}

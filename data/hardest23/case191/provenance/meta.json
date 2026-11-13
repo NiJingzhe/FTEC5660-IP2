@@ -1,0 +1,48 @@
+{
+  "schema": "cad-authorized-testset/item@2",
+  "id": "0bc270f7ebeac6e1aaa93ac29cf123c107b28729c5f3498fd8ae428d4e1a87a1",
+  "test_index": 191,
+  "split": "test",
+  "license": "MIT",
+  "source_verified": true,
+  "native_sha256_equals_item_id": true,
+  "provenance": {
+    "original_filename": "Heatsink Tapping Tool.SLDPRT",
+    "fixed_source_url": "https://raw.githubusercontent.com/tschicki/PS2-Portable/0ef8c9d78a2db9cc5a5687d5720433bf627f4f60/Solidworks/Output/Output%20Assembly/Heatsink%20Tapping%20Tool.SLDPRT",
+    "commit": "0ef8c9d78a2db9cc5a5687d5720433bf627f4f60",
+    "doi": null,
+    "creators": [
+      {
+        "name": "tschicki/PS2-Portable contributors"
+      }
+    ],
+    "license_evidence": "licenses/tschicki__PS2-Portable/evidence.json",
+    "scope_basis": "README explicitly licenses all firmware, gateware and hardware under MIT; OTS and identified third-party component models excluded."
+  },
+  "geometry": {
+    "ok": true,
+    "valid": true,
+    "volume_mm3": 7142.967131746964,
+    "area_mm2": 3047.218846598913,
+    "bbox_mm": [
+      6.500000200000186,
+      39.01528418243932,
+      39.0152841824394
+    ],
+    "surface_types": {
+      "GeomAbs_Cylinder": 24,
+      "GeomAbs_Plane": 14,
+      "GeomAbs_Cone": 48
+    },
+    "geometry_signature": "4b9dd05ea6f9e74c74ea4ac5831274baaf1620732a3c717622103fac1c8884f3",
+    "coarse_signature": "45c0684d21c3bc6ba3fbf2b46f07d263fb78440b9d28a99157b10b40cdaa209f",
+    "solids": 1,
+    "faces": 86,
+    "edges": 392,
+    "shells": 1
+  },
+  "complexity": "complex",
+  "mesh_brep_volume_relative_difference": 0.0005831662889703362,
+  "input_file": "items/0bc270f7ebeac6e1aaa93ac29cf123c107b28729c5f3498fd8ae428d4e1a87a1/brep.step",
+  "native_file_for_source_compliance_and_offline_review": "source_designs/0bc270f7ebeac6e1aaa93ac29cf123c107b28729c5f3498fd8ae428d4e1a87a1/original.sldprt"
+}
