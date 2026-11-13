@@ -4,7 +4,7 @@
 
 - **Paper reproduced:** *CADDesigner: Conceptual CAD Model Generation with a General-Purpose Agent* (arXiv:2508.01031)
 - **One change:** the agent-facing tool contract — paper-era ECIP (a pure-Python layer over CadQuery) replaced by the released **native SimpleCADAPI SDK**, whose diagnostics report *measured* numbers, whose selection is by stable references instead of indices, and whose session graph is replayable; the change is evaluated as **conditional generation** (condition: a reference part; output: parametric code) on a paired 200-part benchmark
-- **Code:** this repository — `code/graph_retrieval.py` (an additional artifact for future work, with unit tests), `results/` (all numbers with provenance)
+- **Code:** the reproduced system is our public SDK — [PhySpace/SimpleCADAPI](https://github.com/PhySpace/SimpleCADAPI); this repository carries the report, the protocol, provenance-tracked results (`results/`), and the future-work retrieval module with tests (`code/graph_retrieval.py`)
 
 ---
 

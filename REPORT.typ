@@ -16,9 +16,11 @@ Ni · November 2026
   is evaluated as #strong[conditional generation] (condition: a
   reference part; output: parametric code) on a paired 200-part
   benchmark
-- #strong[Code:] this repository --- `code/graph_retrieval.py` (an
-  additional artifact for future work, with unit tests), `results/` (all
-  numbers with provenance)
+- #strong[Code:] the reproduced system is our public SDK ---
+  #link("https://github.com/PhySpace/SimpleCADAPI")[PhySpace/SimpleCADAPI]\;
+  this repository carries the report, the protocol, provenance-tracked
+  results (`results/`), and the future-work retrieval module with tests
+  (`code/graph_retrieval.py`)
 
 #divider()
 

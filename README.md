@@ -3,6 +3,7 @@
 Individual Project 2 (Reproducibility), FTEC5660 Agentic AI for Business and FinTech.
 
 **Reproduced paper:** [CADDesigner: Conceptual CAD Model Generation with a General-Purpose Agent](https://arxiv.org/abs/2508.01031) — **my own work** (I am an author; the SimpleCADAPI codebase, paper-era ECIP and the released native SDK alike, is ours).
+**The system under reproduction (code):** [PhySpace/SimpleCADAPI](https://github.com/PhySpace/SimpleCADAPI) — the released native SDK; the paired benchmark in `results/` is from its repository.
 **The one change:** the agent-facing tool contract — paper-era ECIP replaced by the released native SDK (measured structured errors, stable-reference selection, replayable session graph), evaluated as **conditional generation** (condition: reference part; output: parametric code) on a paired 200-part benchmark.
 
 ## What is here
