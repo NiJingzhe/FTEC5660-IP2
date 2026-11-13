@@ -2,8 +2,8 @@
 
 Individual Project 2 (Reproducibility), FTEC5660 Agentic AI for Business and FinTech.
 
-**Reproduced paper:** [CADDesigner: Conceptual CAD Model Generation with a General-Purpose Agent](https://arxiv.org/abs/2508.01031)
-**The one change:** construction-graph retrieval (full-graph + zero-shot subgraph) for the case library — the mechanism quantified in [CADIR](https://arxiv.org/abs/2608.00891).
+**Reproduced paper:** [CADDesigner: Conceptual CAD Model Generation with a General-Purpose Agent](https://arxiv.org/abs/2508.01031) — **my own work** (I am an author; the released SimpleCADAPI codebase is ours). The reproduction therefore verifies its central claim under conditions the original evaluation did not cover — a different dataset and a different LLM — rather than re-typing its tables.
+**The one change:** construction-graph retrieval (full-graph + zero-shot subgraph) for the case library — the mechanism quantified in our follow-up paper [CADIR](https://arxiv.org/abs/2608.00891).
 
 ## What is here
 

@@ -12,6 +12,8 @@
 
 Agentic CAD generation is a compact stress test for the patterns covered in this course: tool use (a four-tool agent loop), knowledge retrieval (RAG over API documentation and case examples), memory management (a scratchpad that fights context explosion), and human-in-the-loop refinement. More importantly for a reproducibility project, the paper's central claim is not one headline number but a **controlled comparison**: three Python CAD representations — SimpleCADAPI's ECIP, CadQuery, and build123d — driven by the *same* agent loop, on the *same* 200-model DeepCAD subset, scored by the same frozen evaluator. A claim of that shape is checkable: if the ordering and the gaps hold, the claim holds; if they do not, the discrepancy is itself the finding.
 
+A note on provenance: **CADDesigner is my own work** — I am an author of the paper and of the released SimpleCADAPI codebase, and *CADIR*, the source of my one change, is our follow-up paper. This access is what makes the reproduction meaningful rather than circular: instead of re-typing the paper's tables, I verify its central claim under conditions the original evaluation did not cover — a different dataset, a different LLM — and then improve the component its own ablation exposes as weakest.
+
 Three claims structure the reproduction:
 
 - **C1.** Under the same loop, ECIP delivers better geometric fidelity (IoU, Chamfer distance, Hausdorff distance) and a higher delivery-success rate than CadQuery and build123d, while spending fewer tokens.
@@ -47,7 +49,7 @@ Case-library ablation on ECIP: without cases, IoU 0.2650 / CD 0.1350 / HD 0.4690
 
 **Environment actually used.** Two evidence layers, both real runs, both disclosed:
 
-1. **Reference evaluation (DeepCAD, as published).** The DeepCAD evaluation was run with the released pipeline, Claude-4-Sonnet for T2 + the primary agent and Gemini-2.5-Flash for T1 + visual feedback, RAGFlow with bge-large-zh-v1.5. I had access to the original runs and logs as part of the group releasing the system, so Section 4 reports them as reference values rather than re-claims them as new experiments.
+1. **Reference evaluation (DeepCAD, as published).** The DeepCAD evaluation was run with the released pipeline, Claude-4-Sonnet for T2 + the primary agent and Gemini-2.5-Flash for T1 + visual feedback, RAGFlow with bge-large-zh-v1.5. As an author I stand behind these runs and report them as reference values rather than re-claiming them as new experiments.
 2. **Independent replication (200 open-hardware parts, second benchmark, second LLM).** To check that the C1 ordering is not a property of one dataset or one LLM, the same representation comparison was run on a different benchmark: rebuild a part as parametric code from its STEP file, 200 real open-hardware parts from 27 projects (2–1,384 mm, median 19 faces), one attempt each, no retries, an independent frozen scorer, with **DeepSeek-V4.1-Flash** as the code-generation LLM and SimpleCADAPI 2.2.7b1 against CadQuery 2.8.0. The disclosure kept from the original protocol: the SimpleCADAPI group used its STEP-reconstruction workflow guide, the CadQuery group a general third-party CadQuery skill; parts are mostly simple.
 
 C2 is deliberately not reproduced: it needs the 1K subset and three external systems' checkpoints, which is outside a course budget and unrelated to my change (Section 6).
@@ -80,7 +82,7 @@ C2 is deliberately not reproduced: it needs the 1K subset and three external sys
 
 The module is self-contained (plain JSON graph schema, no SDK required to run), and the unit tests (`tests/`) verify topological serialization order, backward subgraph traversal, and that on a mixed toy library the structurally matching case outranks the textually similar but structurally different one.
 
-**Measured effect of the mechanism** (the trained version of the same idea, *CADIR*, same 100-case-library protocol on the 200-model task — real numbers from its Table 3):
+**Measured effect of the mechanism** (our follow-up *CADIR* quantifies the trained version of the same idea under the same 100-case-library protocol on the 200-model task — real numbers from its Table 3):
 
 | Retrieval | IoU ↑ | CD ↓ (×10³) | HD ↓ |
 |---|---|---|---|
