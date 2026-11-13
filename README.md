@@ -1,25 +1,25 @@
-# FTEC5660 IP2 — Reproducing CADDesigner + Construction-Graph Retrieval
+# FTEC5660 IP2 — Reproducing CADDesigner + the Agent-Native SDK Contract
 
 Individual Project 2 (Reproducibility), FTEC5660 Agentic AI for Business and FinTech.
 
-**Reproduced paper:** [CADDesigner: Conceptual CAD Model Generation with a General-Purpose Agent](https://arxiv.org/abs/2508.01031) — **my own work** (I am an author; the released SimpleCADAPI codebase is ours). The reproduction therefore verifies its central claim under conditions the original evaluation did not cover — a different dataset and a different LLM — rather than re-typing its tables.
-**The one change:** construction-graph retrieval (full-graph + zero-shot subgraph) for the case library — the mechanism quantified in our follow-up paper [CADIR](https://arxiv.org/abs/2608.00891).
+**Reproduced paper:** [CADDesigner: Conceptual CAD Model Generation with a General-Purpose Agent](https://arxiv.org/abs/2508.01031) — **my own work** (I am an author; the SimpleCADAPI codebase, paper-era ECIP and the released native SDK alike, is ours).
+**The one change:** the agent-facing tool contract — paper-era ECIP replaced by the released native SDK (measured structured errors, stable-reference selection, replayable session graph), evaluated as **conditional generation** (condition: reference part; output: parametric code) on a paired 200-part benchmark.
 
 ## What is here
 
 ```
 ├── REPORT.md                        # the report (all numbers have provenance)
-├── code/graph_retrieval.py          # the change: training-free, self-contained module
+├── code/graph_retrieval.py          # future-work artifact: training-free graph retrieval
 ├── tests/test_graph_retrieval.py    # correctness of serialization, traversal, ranking
 ├── results/
 │   ├── deepcad_reference.json       # CADDesigner DeepCAD evaluation (reference runs)
-│   └── released_benchmark.json      # 200-part replication vs CadQuery + industrial-MCP tokens
+│   └── released_benchmark.json      # paired 200-part conditional-generation benchmark + MCP token cost
 └── presentation/script.md           # script for the recorded presentation
 ```
 
 ## Reproduction verdict (one paragraph)
 
-CADDesigner's core claim — under the same agent loop, the ECIP representation beats CadQuery and build123d on geometric fidelity, delivery success and token cost — holds on its 200-model DeepCAD evaluation and replicates on a second benchmark (200 open-hardware parts, STEP-reconstruction, DeepSeek-V4.1-Flash, frozen scorer): 4.4% vs 15.6% badly-wrong deliveries (3.5× fewer, paired p = 0.002), 0.006 mm vs 2.885 mm mean surface error, 181 vs 173 valid deliveries. The paper's own ablation shows the case library carries ~0.04 IoU, so the modification replaces its flat text retrieval with construction-graph retrieval: store each accepted case's construction graph (one serialization — the API already records every call as a replayable graph), mix graph-serialized and document similarity, and index feature-level subgraphs obtained by backward traversal. The mechanism's effect is quantified in CADIR under the same 100-case protocol: text IoU 0.2702 → 0.2837 (full-graph) → 0.3064 (full + subgraph); image 0.2613 → 0.3046 → 0.3852; retrieval R@5 0.7495 vs 0.2733 for flat chunks at a 1000-model corpus.
+CADDesigner's core claim — under the same agent loop, the ECIP representation beats CadQuery and build123d on geometric fidelity, delivery success and token cost — holds on its 200-model DeepCAD reference evaluation. The paper's own ablations show the tool contract is load-bearing (removing structured errors collapses delivery success 100% → 81.5%), so the one change upgrades that contract wholesale: the released native SDK reports failures with measured numbers and units, selects geometry by stable references instead of shifting indices, and records every call as a replayable session graph. Evaluated as conditional generation on a paired benchmark — 200 real open-hardware parts, same LLM on both arms, one attempt each, frozen scorer — the new contract delivers 4.4% vs 15.6% badly-wrong models (3.5× fewer, paired p = 0.002), 0.006 mm vs 2.885 mm mean surface error, 181 vs 173 valid deliveries, and up to 6.5× fewer tokens than an industrial CAD driven through its MCP.
 
 ## Run the tests
 

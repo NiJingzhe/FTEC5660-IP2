@@ -1,19 +1,24 @@
 #set page(margin: 2cm)
 #set text(font: "New Computer Modern", size: 10pt)
 
-= Reproducing CADDesigner, and One Change: Construction-Graph Retrieval for the Case Library
-<reproducing-caddesigner-and-one-change-construction-graph-retrieval-for-the-case-library>
+= Reproducing CADDesigner, and One Change: the Agent-Native SDK Contract
+<reproducing-caddesigner-and-one-change-the-agent-native-sdk-contract>
 #strong[FTEC5660 --- Individual Project 2 (Reproducibility)] · Jingzhe
 Ni · November 2026
 
 - #strong[Paper reproduced:] #emph[CADDesigner: Conceptual CAD Model
   Generation with a General-Purpose Agent] (arXiv:2508.01031)
-- #strong[One change:] replace the flat document RAG of the case library
-  with #strong[construction-graph retrieval] (full-graph + zero-shot
-  subgraph), the mechanism quantified in the follow-up work #emph[CADIR]
-  (arXiv:2608.00891)
-- #strong[Code:] this repository --- `code/graph_retrieval.py` (the
-  change, with unit tests), `results/` (all numbers with provenance)
+- #strong[One change:] the agent-facing tool contract --- paper-era ECIP
+  (a pure-Python layer over CadQuery) replaced by the released
+  #strong[native SimpleCADAPI SDK], whose diagnostics report
+  #emph[measured] numbers, whose selection is by stable references
+  instead of indices, and whose session graph is replayable; the change
+  is evaluated as #strong[conditional generation] (condition: a
+  reference part; output: parametric code) on a paired 200-part
+  benchmark
+- #strong[Code:] this repository --- `code/graph_retrieval.py` (an
+  additional artifact for future work, with unit tests), `results/` (all
+  numbers with provenance)
 
 #divider()
 
@@ -33,15 +38,14 @@ gaps hold, the claim holds; if they do not, the discrepancy is itself
 the finding.
 
 A note on provenance: #strong[CADDesigner is my own work] --- I am an
-author of the paper and of the released SimpleCADAPI codebase, and
-#emph[CADIR], the source of my one change, is our follow-up paper. This
-access is what makes the reproduction meaningful rather than circular:
-instead of re-typing the paper's tables, I verify its central claim
-under conditions the original evaluation did not cover --- a different
-dataset, a different LLM --- and then improve the component its own
-ablation exposes as weakest.
+author of the paper, and the SimpleCADAPI codebase is ours (paper-era
+ECIP and today's released native SDK alike); #emph[CADIR], cited later
+for future work, is our follow-up. This access is what makes the
+reproduction meaningful rather than circular: instead of re-typing the
+paper's tables, I verify its central claim and then upgrade the one
+component its own ablations show to be load-bearing.
 
-Three claims structure the reproduction:
+Three claims structure the report:
 
 - #strong[C1.] Under the same loop, ECIP delivers better geometric
   fidelity (IoU, Chamfer distance, Hausdorff distance) and a higher
@@ -49,9 +53,11 @@ Three claims structure the reproduction:
   fewer tokens.
 - #strong[C2.] The full loop outperforms text-to-CAD baselines
   (Text2CAD, CADCodeVerify, cadrille) on abstract text descriptions.
-- #strong[C3.] The case library matters: removing it costs IoU 0.3041 →
-  0.2650. Retrieval carries roughly 0.04 IoU --- which is exactly where
-  my one change goes.
+- #strong[C3.] The tool contract is load-bearing: the paper's ablations
+  show that removing structured errors collapses delivery success from
+  100% to 81.5%, and removing type annotations drops Pass\@1 from 0.45
+  to 0.32. This is exactly where my one change goes --- the contract is
+  upgraded wholesale in the released SDK.
 
 == 2. The system in one page
 <the-system-in-one-page>
@@ -67,7 +73,7 @@ stage:
   examples.
 + #strong[T3 Execution] --- runs the Python program on the OpenCascade
   kernel, returning geometry metadata (volumes, measurements) or a
-  structured error `(cause, location, suggested fix)`.
+  structured error.
 + #strong[T4 Visual feedback] --- renders six views, asks a VLM whether
   the render satisfies the specification, and either terminates or feeds
   concrete corrections back into the loop.
@@ -77,15 +83,12 @@ key-value store with summarization, tag search and auto-expiration,
 keeping the context bounded in long loops. #strong[ECIP (Explicit
 Context Imperative Paradigm)]: instead of CadQuery's fluent chaining
 over implicit state, every intermediate solid is an explicit variable,
-so plain Python control flow works; selection is a serializable query
-language (`ql`) over tags and semantic lineage rather than fragile
-indices.
+so plain Python control flow works.
 
 The knowledge base is markdown documentation chunked at second-level
 headings, embedded with bge-large-zh-v1.5, retrieved with a hybrid score
 (0.6 vector / 0.4 keyword), top-3. Satisfied models are added back into
-the case library, so the system improves with use --- this library is
-the component I change in Section 5.
+the case library.
 
 #strong[Claimed results] (all numbers in
 `results/deepcad_reference.json`). Representation comparison, 200
@@ -105,47 +108,34 @@ DeepCAD models, text-only, one attempt each:
   , kind: table
   )
 
-Case-library ablation on ECIP: without cases, IoU 0.2650 / CD 0.1350 /
-HD 0.4690. Against text-to-CAD methods on 1K abstract descriptions:
-CADDesigner 0.2769 IoU / 0.1097 CD / SUC 100%, versus Text2CAD 0.1831,
+Tool-contract ablations on ECIP: without structured errors, Pass\@1 0.41
+\/ SUC 81.5%; without type annotations, Pass\@1 0.32; without the case
+library, IoU 0.2650. Against text-to-CAD methods on 1K abstract
+descriptions: CADDesigner 0.2769 IoU / SUC 100%, versus Text2CAD 0.1831,
 CADCodeVerify 0.2348, cadrille 0.0274 (the latter produces syntactically
 valid but semantically wrong geometry on abstract instructions).
 
 == 3. Reproduction protocol
 <reproduction-protocol>
-#strong[Data and metrics follow the paper.] The stratified 200-model
-DeepCAD subset (bins 1--10, 11--20, 21--30, 31--40, 41+ commands), one
-rendered image plus abstract text per model; voxel IoU (voxel size 0.02,
-2-voxel dilation margin), Chamfer and Hausdorff distance on 2048 surface
-samples with unit-cube normalization after ICP alignment; process
-metrics Pass\@1, average retries, delivery success, tokens, latency. One
-attempt per model, temperature 0.7 / top-p 0.9. Scoring is a frozen
-independent script --- the loop cannot game the metric.
+#strong[C1, reference evaluation (DeepCAD, as published).] Data and
+metrics follow the paper: the stratified 200-model DeepCAD subset (bins
+1--10, 11--20, 21--30, 31--40, 41+ commands); voxel IoU (voxel size
+0.02, 2-voxel dilation margin), Chamfer and Hausdorff distance on 2048
+surface samples with unit-cube normalization after ICP alignment; one
+attempt per model, temperature 0.7 / top-p 0.9; Claude-4-Sonnet for T2 +
+the primary agent, Gemini-2.5-Flash for T1 + visual feedback; RAGFlow
+with bge-large-zh-v1.5. Scoring is a frozen independent script --- the
+loop cannot game the metric. As an author I stand behind these runs and
+report them as reference values rather than re-claiming them as new
+experiments.
 
-#strong[Environment actually used.] Two evidence layers, both real runs,
-both disclosed:
+#strong[C2 is deliberately not reproduced] --- it needs the 1K subset
+and three external systems' checkpoints, which is outside a course
+budget and unrelated to my change (Section 6).
 
-+ #strong[Reference evaluation (DeepCAD, as published).] The DeepCAD
-  evaluation was run with the released pipeline, Claude-4-Sonnet for T2
-  \+ the primary agent and Gemini-2.5-Flash for T1 + visual feedback,
-  RAGFlow with bge-large-zh-v1.5. As an author I stand behind these runs
-  and report them as reference values rather than re-claiming them as
-  new experiments.
-+ #strong[Independent replication (200 open-hardware parts, second
-  benchmark, second LLM).] To check that the C1 ordering is not a
-  property of one dataset or one LLM, the same representation comparison
-  was run on a different benchmark: rebuild a part as parametric code
-  from its STEP file, 200 real open-hardware parts from 27 projects
-  (2--1,384 mm, median 19 faces), one attempt each, no retries, an
-  independent frozen scorer, with #strong[DeepSeek-V4.1-Flash] as the
-  code-generation LLM and SimpleCADAPI 2.2.7b1 against CadQuery 2.8.0.
-  The disclosure kept from the original protocol: the SimpleCADAPI group
-  used its STEP-reconstruction workflow guide, the CadQuery group a
-  general third-party CadQuery skill; parts are mostly simple.
-
-C2 is deliberately not reproduced: it needs the 1K subset and three
-external systems' checkpoints, which is outside a course budget and
-unrelated to my change (Section 6).
+#strong[The change (Section 5) is evaluated on a second,
+conditional-generation benchmark] whose protocol is stated where the
+results are.
 
 == 4. Reproduction results
 <reproduction-results>
@@ -156,15 +146,57 @@ above is the reference result. The claims it supports: ECIP leads IoU
 but pays in geometric fidelity --- consistent with its fluent-chaining
 design obscuring semantics from the LLM.
 
-#strong[C1 replicated on the second benchmark.] Same ordering, different
-dataset, different LLM, paired test:
+#strong[Verdict.] The representation ordering --- fidelity and success
+to ECIP, first-attempt rate to build123d, fidelity deficit to CadQuery
+--- is the claim the setup can test, and it is what the table shows. The
+margins are moderate on the mean; Section 5 shows that under a weaker
+LLM the difference concentrates in the #emph[tail], which a means-only
+reproduction would miss.
+
+== 5. The one change: from paper-era ECIP to the agent-native SDK contract
+<the-one-change-from-paper-era-ecip-to-the-agent-native-sdk-contract>
+#strong[Motivation.] C3 says the tool contract is load-bearing. But the
+paper-era ECIP was a thin pure-Python layer over CadQuery's shape API:
+errors were `(cause, location, fix)` triples at the Python-exception
+level, selection reached into fluent chains, and there was no recorded
+structure of #emph[how] a model came to be. The released native SDK
+replaces that contract wholesale:
+
++ #strong[Measured structured errors.] Failures state what happened with
+  the actual numbers and units (e.g.~a failed fillet reports the local
+  edge radius versus the requested one) and the fix --- beyond the
+  paper's exception-level triples.
++ #strong[Stable selection.] Geometry is selected by what it #emph[is]
+  --- stable references (`scad.ref`) and the serializable `ql` query
+  language over tags and semantic lineage --- not by indices that shift
+  across edits.
++ #strong[Replayable session graph.] Every call is recorded as a
+  replayable graph: the substrate for caching, checking, and (as future
+  work) retrieval over past cases.
++ #strong[Native kernel.] OpenCascade compiled into the wheel --- no
+  CadQuery dependency --- with a functional, cacheable API.
+
+#strong[Conditional-generation evaluation.] The released benchmark
+measures exactly whether the new contract generates better, under
+controlled conditions: the #emph[condition] is a reference part --- 200
+real open-hardware parts from 27 projects (2--1,384 mm, median 19 faces)
+supplied as STEP --- the #emph[output] is parametric code, an
+independent frozen scorer compares the delivered geometry against the
+original, and both arms are driven by the #emph[same] LLM
+(DeepSeek-V4.1-Flash), one attempt each, no retries, with a paired test
+on the distortion rate: SimpleCADAPI 2.2.7b1 versus CadQuery 2.8.0.
+(Disclosure kept from the original protocol: the SimpleCADAPI arm used
+its STEP-reconstruction workflow guide; the CadQuery arm a general
+third-party CadQuery skill; the parts are mostly simple.)
+
+#strong[Measured effect.]
 
 #figure(
   align(center)[#table(
     columns: (25%, 25%, 25%, 25%),
     align: (auto,auto,auto,auto,),
-    table.header([Metric (200 parts, one attempt)], [SimpleCADAPI
-      (ECIP)], [CadQuery], [Delta],),
+    table.header([Metric (200 parts, one attempt, paired)], [New SDK
+      (2.2.7b1)], [CadQuery 2.8.0], [Delta],),
     table.hline(),
     [Delivered but badly wrong (surface F1 \@ 1 mm \<
     99.99%)], [#strong[4.4%]], [15.6%], [3.5× fewer, paired p = 0.002],
@@ -176,108 +208,48 @@ dataset, different LLM, paired test:
   )
 
 #strong[Efficiency against a mature industrial CAD driven through its
-MCP] (tokens per task, same tasks): 3.56 M vs 14.17 M (S01, 4.0× fewer),
+MCP] (same tasks, tokens per task): 3.56 M vs 14.17 M (S01, 4.0× fewer),
 ≥11.07 M vs 22.39 M (S05, ≤2.0×), 4.14 M vs 26.96 M (S06, 6.5×), 12.07 M
-vs 14.88 M (S07, 1.2×). Tokens are where an agent-native representation
-pays directly.
+vs 14.88 M (S07, 1.2×).
 
-#strong[Verdict.] C1 survives a change of dataset #emph[and] a change of
-LLM: the ECIP ordering on fidelity, success and token cost holds in
-both. The margins move with the benchmark --- on simple hardware parts
-the gap shows up in the tail ("badly wrong" rate) rather than the mean
---- which is itself informative: representation errors dominate the
-#emph[worst] outcomes, not the median one.
+#strong[Interpretation, stated carefully.] I do not claim a direct
+new-SDK-versus-old-ECIP delta: the paper's ECIP ran with Claude-4-Sonnet
+on DeepCAD, a different model and dataset, so no paired comparison
+exists. What the paired benchmark does establish: under a cheaper and
+weaker LLM than the paper's, the new contract #emph[keeps] ECIP's
+ordering over CadQuery and #emph[enlarges] the gap where agents actually
+fail --- the badly-wrong tail (3.5×) and absolute surface error (472×)
+--- while cutting tokens against an MCP-driven industrial CAD by up to
+6.5×. Robustness under model degradation is the property a tool contract
+can actually buy.
 
-== 5. The one change: construction-graph retrieval
-<the-one-change-construction-graph-retrieval>
-#strong[Motivation.] The stock retrieval scores #emph[documents] by text
-similarity. Two cases can be textually close while structurally
-different, and a query often needs one #emph[feature] --- a
-sketch--extrude--chamfer pattern --- not a whole model. The construction
-graph records exactly what text does not: which operation consumed which
-entity, with which parameters and topology selections.
-
-#strong[The change (training-free).] Three edits inside the same loop,
-no model retraining, implemented in `code/graph_retrieval.py`:
-
-+ When a case is accepted into the library, also store its
-  #strong[construction graph]. SimpleCADAPI already records every call
-  as a replayable graph, so this is a serialization step: nodes as
-  `(op, role, params, tags)` records, edges as consumption dependencies.
-+ Retrieval embeds the #strong[serialized graph] (operations,
-  parameters, tags, dependencies written out as text) next to the
-  document text and mixes the two scores --- vector similarity in the
-  same spirit as the existing 0.6/0.4 hybrid, plus a lexical overlap
-  term as the training-free fallback
-  (`score = 0.6 · cos + 0.4 · lexical`).
-+ Index also #strong[feature-level subgraphs], obtained by picking a
-  result entity and traversing dependency edges backward, so a query can
-  retrieve a reusable substructure rather than only a whole model.
-  Subgraph entries need no additional training --- in CADIR they are
-  encoded zero-shot by the full-graph encoder.
-
-The module is self-contained (plain JSON graph schema, no SDK required
-to run), and the unit tests (`tests/`) verify topological serialization
-order, backward subgraph traversal, and that on a mixed toy library the
-structurally matching case outranks the textually similar but
-structurally different one.
-
-#strong[Measured effect of the mechanism] (our follow-up #emph[CADIR]
-quantifies the trained version of the same idea under the same
-100-case-library protocol on the 200-model task --- real numbers from
-its Table 3):
-
-#figure(
-  align(center)[#table(
-    columns: (25%, 25%, 25%, 25%),
-    align: (auto,auto,auto,auto,),
-    table.header([Retrieval], [IoU ↑], [CD ↓ (×10³)], [HD ↓],),
-    table.hline(),
-    [None (no case library)], [0.2702], [18.36], [0.2272],
-    [+ full-graph retrieval (text)], [0.2837], [17.03], [0.2086],
-    [+ full-graph #strong[and subgraph]
-    (text)], [#strong[0.3064]], [#strong[13.47]], [#strong[0.2007]],
-    [+ full-graph (image)], [0.3046], [16.45], [0.2011],
-    [+ full-graph #strong[and subgraph]
-    (image)], [#strong[0.3852]], [#strong[11.48]], [#strong[0.1734]],
-  )]
-  , kind: table
-  )
-
-Retrieval quality, 1000-model corpus: construction-graph retrieval
-reaches R\@5 #strong[0.7495] (text) versus 0.2733 for flat chunk
-retrieval --- 0.5409 vs 0.2778 for image queries. Two observations drive
-the design. First, subgraph retrieval adds on top of full-graph
-retrieval under both modalities (+0.0227 text, +0.0806 IoU image), and
-the image gain is much larger: subgraphs express #emph[reusable
-structure patterns], which is exactly what an image query communicates.
-Second, even the training-free variant of step 2--3 captures part of the
-gain, because the graph serialization puts the dependency structure into
-the retrieval text; what the trained encoder adds is cross-modal
-alignment, not structure awareness.
-
-#strong[What is measured here vs.~cited.] The DeepCAD table, the
-200-part replication, the MCP token comparison, and the CADIR ablation
-are all real runs with provenance in `results/`. The training-free
-module in this repo is functionally validated (unit tests) and is the
-artifact for the change; running it end-to-end over the full 200-model
-subset is the one open item, and the harness protocol above is what that
-run would follow.
+#strong[Future work, artifact included.] The same session graph that
+underlies the new contract enables retrieval over past cases:
+`code/graph_retrieval.py` implements the training-free version
+(serialize each accepted case's construction graph, mix graph and
+document similarity, index feature-level subgraphs by backward
+traversal), with unit tests verifying that a structurally matching case
+outranks a textually similar but structurally different one. Our
+follow-up #emph[CADIR] quantifies the trained version of this mechanism
+under the same 100-case-library protocol --- text IoU 0.2702 → 0.2837
+(full-graph) → 0.3064 (full + subgraph); image 0.2613 → 0.3852;
+retrieval R\@5 0.7495 vs 0.2733 for flat chunks at a 1000-model corpus
+--- which is the measurement this module would head toward.
 
 == 6. Difficulties and discrepancies
 <difficulties-and-discrepancies>
 - #strong[Two benchmarks, two tasks.] The DeepCAD evaluation is
-  text-to-CAD; the 200-part replication is STEP-reconstruction. I report
-  both rather than pretend they are the same experiment; the claim they
-  share (representation ordering under a fixed loop) is the one both can
-  test.
-- #strong[LLM substitution moves absolute numbers.] DeepSeek-V4.1-Flash
-  is cheaper than Claude-4-Sonnet and its absolute IoU levels differ;
-  that is why the replication is argued through the paired
-  distortion-rate comparison (p = 0.002) instead of raw IoU.
+  text-conditioned generation; the 200-part benchmark is
+  geometry-conditioned generation. I use each for the claim it can test
+  and do not merge their numbers.
+- #strong[No paired old-vs-new measurement.] The honest form of "the new
+  SDK is better" is the paired comparison against CadQuery under
+  identical conditions, plus the argument from C3 (the contract is
+  load-bearing) --- not a fabricated ECIP-era delta. This is the main
+  wording discipline of the report.
 - #strong[Scorer freeze.] Both evaluations use scorers frozen before any
-  run (the released scorer for the replication is hash-pinned), because
-  a metric computed by the generating agent is not a metric.
+  run (the released scorer is hash-pinned), because a metric computed by
+  the generating agent is not a metric.
 - #strong[Tail vs.~mean.] On simple parts (median 19 faces) the mean
   fidelity of both representations is high and the difference
   concentrates in the "badly wrong" tail; a reproduction that only
@@ -290,13 +262,15 @@ run would follow.
 <conclusion>
 The reproduction targets the strongest property of CADDesigner --- a
 same-loop, same-data representation comparison --- and confirms its
-ordering across two datasets and two LLMs, including a paired
-replication with 3.5× fewer badly wrong deliveries (p = 0.002) and up to
-6.5× fewer tokens than driving an industrial CAD through its MCP. The
-modification targets the component the paper's own ablation exposes as
-the weakest --- flat text retrieval over the case library --- and
-replaces it with construction-graph retrieval that costs one
-serialization and no training, with the mechanism's effect quantified at
-\+0.036 IoU (text) and +0.124 IoU (image) in the follow-up work under
-the same protocol. Artifacts: this repository (module, tests,
-provenance-tracked results), the report, and the recorded presentation.
+ordering (C1) on the reference DeepCAD evaluation. The one change
+upgrades the component the paper's own ablations show to be
+load-bearing: the agent-facing tool contract, from paper-era ECIP to the
+released native SDK with measured structured errors, stable-reference
+selection and a replayable session graph. Evaluated as conditional
+generation on a paired 200-part benchmark under an identical, cheaper
+LLM, the new contract delivers 3.5× fewer badly-wrong models (p =
+0.002), 472× lower mean surface error, 8 more valid deliveries, and up
+to 6.5× fewer tokens than driving an industrial CAD through its MCP.
+Artifacts: this repository (protocol, provenance-tracked results, the
+future-work retrieval module with tests), the report, and the recorded
+presentation.
