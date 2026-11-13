@@ -1,0 +1,33 @@
+{
+  "what": "Reference values of the CADDesigner DeepCAD evaluation, transcribed from the paper (arXiv:2508.01031v6). These are the original runs of the released pipeline; this report cites them as reference rather than re-claims them as new experiments.",
+  "protocol": {
+    "dataset": "DeepCAD deduplicated, stratified 200-model test subset (bins 1-10, 11-20, 21-30, 31-40, 41+ commands)",
+    "metrics": "IoU (voxel 0.02, 2-voxel margin), Chamfer distance, Hausdorff distance (2048 surface points, unit-cube normalization, ICP alignment)",
+    "process_metrics": ["Pass@1", "average retries", "delivery success", "tokens", "latency"],
+    "decoding": "temperature 0.7, top-p 0.9, one attempt per model",
+    "llms": {"code_generation_and_primary_agent": "Claude-4-Sonnet", "refinement_and_visual_feedback": "Gemini-2.5-Flash"},
+    "rag": "RAGFlow, bge-large-zh-v1.5, hybrid 0.6 vector / 0.4 keyword, top-3"
+  },
+  "representation_comparison_200_models_text_only": {
+    "ECIP": {"iou": 0.3041, "cd": 0.1236, "hd": 0.4154, "pass_at_1": 0.46, "avg_retries": 1.86, "suc": 1.000, "tokens_m": 0.98, "latency_s": 436},
+    "CadQuery": {"iou": 0.2827, "cd": 0.1818, "hd": 0.5186, "pass_at_1": 0.50, "avg_retries": 2.01, "suc": 0.875, "tokens_m": 1.40, "latency_s": 541},
+    "build123d": {"iou": 0.2617, "cd": 0.1570, "hd": 0.5126, "pass_at_1": 0.59, "avg_retries": 1.91, "suc": 0.960, "tokens_m": 1.35, "latency_s": 363}
+  },
+  "case_library_ablation_ECIP_200_models": {
+    "full": {"iou": 0.3041, "cd": 0.1236, "hd": 0.4154},
+    "without_case_library": {"iou": 0.2650, "cd": 0.1350, "hd": 0.4690}
+  },
+  "text_to_cad_1k_abstract": {
+    "CADDesigner": {"iou": 0.2769, "cd": 0.1097, "hd": 0.4347, "suc": 1.000},
+    "Text2CAD": {"iou": 0.1831, "cd": 0.1475, "hd": 0.5680, "suc": 0.966},
+    "CADCodeVerify": {"iou": 0.2348, "cd": 0.2329, "hd": 0.4892, "suc": 0.861},
+    "cadrille": {"iou": 0.0274, "cd": 0.2162, "hd": 0.5817, "suc": 0.982}
+  },
+  "ablations_ECIP_200_models": {
+    "without_structured_errors": {"pass_at_1": 0.41, "avg_retries": 2.62, "suc": 0.815},
+    "without_type_annotations": {"pass_at_1": 0.32, "avg_retries": 2.30, "suc": 0.905},
+    "without_case_library": {"iou": 0.2650, "cd": 0.1350, "hd": 0.4690},
+    "without_T4_visual_feedback": {"iou": 0.2522, "cd": 0.1192, "hd": 0.4793},
+    "text_plus_image": {"iou": 0.3893, "cd": 0.0693, "hd": 0.2553}
+  }
+}
