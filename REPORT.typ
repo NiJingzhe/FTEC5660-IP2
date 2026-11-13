@@ -43,7 +43,11 @@ ECIP and today's released native SDK alike); #emph[CADIR], cited later
 for future work, is our follow-up. This access is what makes the
 reproduction meaningful rather than circular: instead of re-typing the
 paper's tables, I verify its central claim and then upgrade the one
-component its own ablations show to be load-bearing.
+component its own ablations show to be load-bearing. This is also the
+scope of reproduction this project takes --- the assignment does not
+require re-matching the original paper's tables: the system's idea is
+rebuilt under new conditions and measured against #strong[new baselines]
+under identical, paired conditions (Section 5).
 
 Three claims structure the report:
 
